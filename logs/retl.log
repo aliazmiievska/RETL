@@ -6,3 +6,9 @@
 2026-01-18 15:14:16,475 - __main__ - INFO - ================================================================================
 2026-01-18 15:14:16,475 - __main__ - INFO - STAGE 1: EXTRACTION
 2026-01-18 15:14:16,475 - __main__ - INFO - ================================================================================
+2026-01-18 15:14:17,490 - __main__ - INFO - 
+Extracting from makeup.com.ua
+2026-01-18 15:14:17,553 - extract - INFO - Connected to MySQL database
+2026-01-18 15:14:17,553 - extract - INFO - Created extract entry with ID: 26
+2026-01-18 15:14:17,553 - extract - INFO - Fetching products from https://makeup.com.ua/ua/search/?q=naturelle
+2026-01-18 15:14:36,356 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
