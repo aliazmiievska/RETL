@@ -2,8 +2,8 @@ import mysql.connector
 import logging
 from datetime import datetime
 import yaml
-#import openai
-#from langchain_openai import ChatOpenAI
+import openai
+from langchain_openai import ChatOpenAI
 
 # logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -50,26 +50,7 @@ class Transformer:
     
     def _init_core_tables(self):
         cursor = self.conn.cursor()
-        # Product_CORE table (no categories/brands)
-        # Previously this code created a Categories table and a Product_CORE
-        # with brand/category fields. Kept here as commented reference.
-        #
-        # cursor.execute('''
-        #     CREATE TABLE IF NOT EXISTS Categories (
-        #         category_id INT AUTO_INCREMENT PRIMARY KEY,
-        #         category_name VARCHAR(255) UNIQUE NOT NULL
-        #     )
-        # ''')
-        #
-        # cursor.execute('''
-        #     CREATE TABLE IF NOT EXISTS Product_CORE (
-        #         pc_id INT AUTO_INCREMENT PRIMARY KEY,
-        #         pc_desc TEXT NOT NULL,
-        #         pc_brand VARCHAR(255) NOT NULL,
-        #         pc_fk_category INT,
-        #         FOREIGN KEY (pc_fk_category) REFERENCES Categories(category_id)
-        #     )
-        # ''')
+
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Product_CORE (
                 pc_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -79,63 +60,20 @@ class Transformer:
         ''')
         
         # Review_CORE table
-        # cursor.execute('''
-        #     CREATE TABLE IF NOT EXISTS Review_CORE (
-        #         rc_id INT AUTO_INCREMENT PRIMARY KEY,
-        #         pc_fk_rc INT NOT NULL,
-        #         rc_text TEXT NOT NULL,
-        #         rc_source INT NOT NULL,
-        #         rc_date DATE NOT NULL,
-        #         rc_sentiment ENUM('negative', 'neutral', 'positive'),
-        #         rc_importance ENUM('high', 'low'),
-        #         rc_hash VARCHAR(32) UNIQUE NOT NULL,
-        #         FOREIGN KEY (pc_fk_rc) REFERENCES Product_CORE(pc_id)
-        #     )
-        # ''')
-        
-        self.conn.commit()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS Review_CORE (
+                rc_id INT AUTO_INCREMENT PRIMARY KEY,
+                pc_fk_rc INT NOT NULL,
+                rc_text TEXT NOT NULL,
+                rc_source INT NOT NULL,
+                rc_date DATE NOT NULL,
+                rc_sentiment ENUM('negative', 'neutral', 'positive'),
+                rc_hash VARCHAR(32) UNIQUE NOT NULL,
+                FOREIGN KEY (pc_fk_rc) REFERENCES Product_CORE(pc_id)
+            )
+        ''')
     
-    # Categories removed: category assignment is no longer part of transform
-    # The old LLM-based category assignment function is preserved here commented
-    # for reference (do not execute):
-    #
-    # def call_llm_for_category(self, product_name):
-    #     """Використовує LLM API для визначення категорії продукту"""
-    #     try:
-    #         # Отримати список категорій
-    #         cursor = self.conn.cursor()
-    #         cursor.execute('SELECT category_name FROM Categories')
-    #         categories = [row[0] for row in cursor.fetchall()]
-    #         
-    #         if not categories:
-    #             logger.warning("No categories found in database")
-    #             return None
-    #         
-    #         # Виклик OpenAI ChatCompletion
-    #         openai.api_key = self.config.get('openai', {}).get('api_key')
-#
-    #         prompt = f"""Визнач категорію для товару: \"{product_name}\"\n\nДоступні категорії: {', '.join(categories)}\n\nВідповідь дай ТІЛЬКИ назву категорії, без жодних додаткових слів."""
-#
-    #         resp = openai.ChatCompletion.create(
-    #             model="gpt-3.5-turbo",
-    #             messages=[{"role": "user", "content": prompt}],
-    #             max_tokens=1000,
-    #             temperature=0
-    #         )
-#
-    #         category = resp['choices'][0]['message']['content'].strip()
-    #         
-    #         # Перевірити чи категорія існує
-    #         if category in categories:
-    #             cursor.execute('SELECT category_id FROM Categories WHERE category_name = %s', (category,))
-    #             result = cursor.fetchone()
-    #             return result[0] if result else None
-    #         
-    #         return None
-    #         
-    #     except Exception as e:
-    #         logger.error(f"Error calling LLM for category: {e}")
-    #         return None
+        self.conn.commit()
     
     def find_similar_products(self, product_names):
         """Шукає схожі продукти в Product_CORE для групи продуктів через хеш"""
@@ -158,43 +96,43 @@ class Transformer:
         import hashlib
         return hashlib.md5(product_name.encode('utf-8')).hexdigest()
     
-    # def analyze_review_sentiment(self, review_texts):
-    #     """Analyzes sentiment for multiple reviews via a single LLM request"""
-    #     try:
-    #         # Формування єдиного запиту для аналізу кількох відгуків
-    #         prompt = "Проаналізуй сентимент цих відгуків:\n\n"
-    #         for i, review_text in enumerate(review_texts, 1):
-    #             prompt += f"Відгук {i}: \"{review_text}\"\n"
+    def analyze_review_sentiment(self, review_texts):
+        """Analyzes sentiment for multiple reviews via a single LLM request"""
+        try:
+            # Формування єдиного запиту для аналізу кількох відгуків
+            prompt = "Проаналізуй сентимент цих відгуків:\n\n"
+            for i, review_text in enumerate(review_texts, 1):
+                prompt += f"Відгук {i}: \"{review_text}\"\n"
 
-    #         prompt += "\nВизнач для кожного відгуку:\n1. Сентимент: negative, neutral, або positive\n2. Важливість: high або low\n\nВідповідь дай у форматі: Відгук <номер>: сентимент,важливість"
+            prompt += "\nВизнач для кожного відгуку:\n1. Сентимент: negative, neutral, або positive\n\nВідповідь дай у форматі: Відгук <номер>: сентимент"
 
-    #         resp = self.llm(
-    #             messages=[{"role": "user", "content": prompt}]
-    #         )
+            resp = self.llm(
+                messages=[{"role": "user", "content": prompt}]
+            )
 
-    #         # Обробка відповіді
-    #         logger.debug(f"LLM response: {resp}")
-    #         response_content = resp['choices'][0]['message']['content']
-    #         lines = response_content.strip().split("\n")
+            # Обробка відповіді
+            logger.debug(f"LLM response: {resp}")
+            response_content = resp['choices'][0]['message']['content']
+            lines = response_content.strip().split("\n")
 
-    #         sentiments = []
-    #         for line in lines:
-    #             parts = line.split(": ")[1].split(",")
-    #             if len(parts) == 2:
-    #                 sentiment = parts[0].strip()
-    #                 importance = parts[1].strip()
+            sentiments = []
+            for line in lines:
+                parts = line.split(": ")[1].split(",")
+                if len(parts) == 2:
+                    sentiment = parts[0].strip()
+                    importance = parts[1].strip()
 
-    #                 if sentiment in ['negative', 'neutral', 'positive'] and importance in ['high', 'low']:
-    #                     sentiments.append((sentiment, importance))
-    #                 else:
-    #                     sentiments.append(('neutral', 'low'))
-    #             else:
-    #                 sentiments.append(('neutral', 'low'))
+                    if sentiment in ['negative', 'neutral', 'positive']:
+                        sentiments.append((sentiment))
+                    else:
+                        sentiments.append(('neutral'))
+                else:
+                    sentiments.append(('neutral'))
 
-    #         return sentiments
-    #     except Exception as e:
-    #         logger.error(f"Error analyzing sentiment: {e}")
-    #         return [('neutral', 'low')] * len(review_texts)
+            return sentiments
+        except Exception as e:
+            logger.error(f"Error analyzing sentiment: {e}")
+            return [('neutral')] * len(review_texts)
     
     def transform_extract(self, extract_id):
         """Трансформує дані з RAW в CORE для конкретного extract_id"""
@@ -203,13 +141,6 @@ class Transformer:
             cursor = self.conn.cursor(dictionary=True)
             
             # Отримати всі продукти з RAW для цього extract
-            # Old query included extract_brand; kept commented for reference
-            # cursor.execute('''
-            #     SELECT pr.*, e.extract_brand, e.extract_fk_source
-            #     FROM Product_RAW pr
-            #     JOIN Extracts e ON pr.extract_fk_pr = e.extract_id
-            #     WHERE pr.extract_fk_pr = %s
-            # ''', (extract_id,))
             cursor.execute('''
                 SELECT pr.*, e.extract_fk_source
                 FROM Product_RAW pr
@@ -251,38 +182,38 @@ class Transformer:
                     logger.info(f"Created new product in CORE: {product_name}")
                 
                 # Обробити відгуки для цього продукту
-                # cursor.execute('''
-                #     SELECT * FROM Review_RAW WHERE pr_fk_rr = %s
-                # ''', (raw_product['pr_id'],))
+                cursor.execute('''
+                    SELECT * FROM Review_RAW WHERE pr_fk_rr = %s
+                ''', (raw_product['pr_id'],))
                 
-                # raw_reviews = cursor.fetchall()
+                raw_reviews = cursor.fetchall()
                 
-                # for raw_review in raw_reviews:
-                #     try:
-                #         # Перевірити чи відгук вже існує (по hash)
-                #         cursor.execute('SELECT rc_id FROM Review_CORE WHERE rc_hash = %s', 
-                #                      (raw_review['rr_hash'],))
-                #         
-                #         if cursor.fetchone():
-                #             logger.debug(f"Review already exists: {raw_review['rr_hash']}")
-                #             continue
-                #         
-                #         # Аналіз сентименту та важливості
-                #         sentiment, importance = self.analyze_review_sentiment(raw_review['rr_text'])
-                #         
-                #         # Додати відгук в CORE
-                #         cursor.execute('''
-                #             INSERT INTO Review_CORE 
-                #             (pc_fk_rc, rc_text, rc_source, rc_date, rc_sentiment, rc_importance, rc_hash)
-                #             VALUES (%s, %s, %s, %s, %s, %s, %s)
-                #         ''', (pc_id, raw_review['rr_text'], raw_product['extract_fk_source'],
-                #               raw_review['rr_date'], sentiment, importance, raw_review['rr_hash']))
-                #         
-                #         logger.debug(f"Added review to CORE: {raw_review['rr_hash']}")
-                #         
-                #     except Exception as e:
-                #         logger.error(f"Error processing review: {e}")
-                #         continue
+                for raw_review in raw_reviews:
+                    try:
+                        # Перевірити чи відгук вже існує (по hash)
+                        cursor.execute('SELECT rc_id FROM Review_CORE WHERE rc_hash = %s', 
+                                    (raw_review['rr_hash'],))
+                        
+                        if cursor.fetchone():
+                            logger.debug(f"Review already exists: {raw_review['rr_hash']}")
+                            continue
+                        
+                        # Аналіз сентименту та важливості
+                        sentiment, importance = self.analyze_review_sentiment(raw_review['rr_text'])
+                        
+                        # Додати відгук в CORE
+                        cursor.execute('''
+                            INSERT INTO Review_CORE 
+                            (pc_fk_rc, rc_text, rc_source, rc_date, rc_sentiment, rc_importance, rc_hash)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s)
+                        ''', (pc_id, raw_review['rr_text'], raw_product['extract_fk_source'],
+                            raw_review['rr_date'], sentiment, importance, raw_review['rr_hash']))
+                        
+                        logger.debug(f"Added review to CORE: {raw_review['rr_hash']}")
+                        
+                    except Exception as e:
+                        logger.error(f"Error processing review: {e}")
+                        continue
                 
                 self.conn.commit()
             
