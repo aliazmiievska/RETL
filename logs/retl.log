@@ -1,62 +1,67 @@
-2026-01-18 17:20:43,379 - __main__ - INFO - 
+2026-01-18 17:42:15,822 - __main__ - INFO - 
 ================================================================================
-2026-01-18 17:20:43,381 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 17:20:43
-2026-01-18 17:20:43,381 - __main__ - INFO - ================================================================================
+2026-01-18 17:42:15,822 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 17:42:15
+2026-01-18 17:42:15,822 - __main__ - INFO - ================================================================================
 
-2026-01-18 17:20:43,381 - __main__ - INFO - 
+2026-01-18 17:42:15,828 - __main__ - INFO - 
 ================================================================================
-2026-01-18 17:20:43,381 - __main__ - INFO - STAGE 2: TRANSFORMATION
-2026-01-18 17:20:43,381 - __main__ - INFO - ================================================================================
-2026-01-18 17:20:44,487 - transform - INFO - Connected to MySQL database
-2026-01-18 17:20:44,487 - transform - INFO - Transforming extract 3
-2026-01-18 17:20:44,504 - transform - INFO - Connected to MySQL database
-2026-01-18 17:20:44,504 - transform - INFO - Processing 9 products from extract 3
-2026-01-18 17:20:46,865 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:20:47,598 - transform - ERROR - Error calling LLM for similarities: 'AIMessage' object is not subscriptable
-2026-01-18 17:20:47,598 - transform - INFO - Created new product in CORE: Angel Schlesser Femme Naturelle
-2026-01-18 17:20:47,608 - transform - INFO - Created new product in CORE: Naturelle Universal Wet Wipes
-2026-01-18 17:20:47,608 - transform - INFO - Created new product in CORE: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 17:20:47,608 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol
-2026-01-18 17:20:47,608 - transform - INFO - Created new product in CORE: Naturelle Pink Wet Wipes
-2026-01-18 17:20:47,608 - transform - INFO - Created new product in CORE: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 17:20:47,624 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 17:20:47,624 - transform - INFO - Created new product in CORE: Naturelle Kidz
-2026-01-18 17:20:47,624 - transform - INFO - Created new product in CORE: Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 17:20:47,624 - transform - INFO - Transformation completed for extract 3
-2026-01-18 17:20:47,624 - transform - INFO - Transforming extract 5
-2026-01-18 17:20:47,639 - transform - INFO - Connected to MySQL database
-2026-01-18 17:20:47,639 - transform - INFO - Processing 9 products from extract 5
-2026-01-18 17:20:48,394 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:21:09,158 - transform - ERROR - Error calling LLM for similarities: 'AIMessage' object is not subscriptable
-2026-01-18 17:21:09,160 - transform - INFO - Created new product in CORE: Angel Schlesser Femme Naturelle
-2026-01-18 17:21:09,160 - transform - INFO - Created new product in CORE: Naturelle Universal Wet Wipes
-2026-01-18 17:21:09,160 - transform - INFO - Created new product in CORE: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 17:21:09,175 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol
-2026-01-18 17:21:09,175 - transform - INFO - Created new product in CORE: Naturelle Pink Wet Wipes
-2026-01-18 17:21:09,175 - transform - INFO - Created new product in CORE: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 17:21:09,175 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 17:21:09,175 - transform - INFO - Created new product in CORE: Naturelle Kidz
-2026-01-18 17:21:09,191 - transform - INFO - Created new product in CORE: Naturelle Classic Night
-2026-01-18 17:21:09,191 - transform - INFO - Transformation completed for extract 5
-2026-01-18 17:21:09,191 - transform - INFO - Transforming extract 13
-2026-01-18 17:21:09,207 - transform - INFO - Connected to MySQL database
-2026-01-18 17:21:09,207 - transform - INFO - Processing 26 products from extract 13
-2026-01-18 17:21:10,387 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:23:18,895 - transform - ERROR - Error calling LLM for similarities: 'AIMessage' object is not subscriptable
-2026-01-18 17:23:18,895 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 17:23:29,075 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:24:29,563 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 17:24:29,563 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 17:24:30,444 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:25:03,672 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 17:25:03,672 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 17:25:05,094 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:25:30,459 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 17:25:30,459 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 17:25:32,030 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:26:01,735 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 17:26:01,735 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 17:26:04,929 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 17:26:14,839 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 17:26:14,839 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 17:26:24,571 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 17:42:15,828 - __main__ - INFO - STAGE 2: TRANSFORMATION
+2026-01-18 17:42:15,828 - __main__ - INFO - ================================================================================
+2026-01-18 17:42:15,910 - transform - INFO - Connected to MySQL database
+2026-01-18 17:42:15,916 - transform - INFO - Transforming extract 3
+2026-01-18 17:42:15,927 - transform - INFO - Connected to MySQL database
+2026-01-18 17:42:15,927 - transform - INFO - Processing 9 products from extract 3
+2026-01-18 17:42:15,931 - transform - INFO - Created new product in CORE: Angel Schlesser Femme Naturelle
+2026-01-18 17:42:15,931 - transform - INFO - Created new product in CORE: Naturelle Universal Wet Wipes
+2026-01-18 17:42:15,942 - transform - INFO - Created new product in CORE: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:42:15,942 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol
+2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Pink Wet Wipes
+2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Kidz
+2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:42:15,947 - transform - INFO - Transformation completed for extract 3
+2026-01-18 17:42:15,947 - transform - INFO - Transforming extract 5
+2026-01-18 17:42:15,963 - transform - INFO - Connected to MySQL database
+2026-01-18 17:42:15,963 - transform - INFO - Processing 9 products from extract 5
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Kidz
+2026-01-18 17:42:15,979 - transform - INFO - Created new product in CORE: Naturelle Classic Night
+2026-01-18 17:42:15,979 - transform - INFO - Transformation completed for extract 5
+2026-01-18 17:42:15,979 - transform - INFO - Transforming extract 13
+2026-01-18 17:42:15,986 - transform - INFO - Connected to MySQL database
+2026-01-18 17:42:15,994 - transform - INFO - Processing 26 products from extract 13
+2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Вологі серветки для прибирання
+2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Серветки вологі універсальні
+2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки рожеві
+2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера"
+2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Вологі серветки для очищення взуття
+2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Avon Imari Naturelle
+2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Chloe Naturelle
+2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel
+2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense
+2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:42:16,073 - transform - INFO - Created new product in CORE: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 17:42:16,073 - transform - INFO - Created new product in CORE: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 17:42:16,073 - transform - ERROR - Transformation failed: 1062 (23000): Duplicate entry 'ea79bd0c95e715b4c97adcbc0afe563e' for key 'product_core.pc_hash'
+2026-01-18 17:42:16,073 - __main__ - ERROR - ✗ Transformation failed: 1062 (23000): Duplicate entry 'ea79bd0c95e715b4c97adcbc0afe563e' for key 'product_core.pc_hash'
+2026-01-18 17:42:16,073 - __main__ - ERROR - Transformation failed. Skipping load stage.

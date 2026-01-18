@@ -2,9 +2,8 @@ import mysql.connector
 import logging
 from datetime import datetime
 import yaml
-from rapidfuzz import fuzz
-import openai
-from langchain_openai import ChatOpenAI
+#import openai
+#from langchain_openai import ChatOpenAI
 
 # logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -16,19 +15,19 @@ class Transformer:
         self.similarity_threshold = 0.9
 
         # --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
-        openrouter_conf = self.config.get('openrouter', {})
-        api_key = openrouter_conf.get('api_key')
-        base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
-        model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
+        # openrouter_conf = self.config.get('openrouter', {})
+        # api_key = openrouter_conf.get('api_key')
+        # base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
+        # model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
 
         # LangChain OpenAI wrapper supports custom endpoint via openai_api_base
-        self.llm = ChatOpenAI(
-            model=model,
-            openai_api_key=api_key,
-            openai_api_base=base_url,
-            temperature=0.0,
-            timeout=120,
-        )
+        # self.llm = ChatOpenAI(
+        #     model=model,
+        #     openai_api_key=api_key,
+        #     openai_api_base=base_url,
+        #     temperature=0.0,
+        #     timeout=120,
+        # )
 
     def _load_config(self, path):
         with open(path, 'r', encoding='utf-8') as f:
@@ -74,7 +73,8 @@ class Transformer:
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Product_CORE (
                 pc_id INT AUTO_INCREMENT PRIMARY KEY,
-                pc_desc TEXT NOT NULL
+                pc_desc TEXT NOT NULL,
+                pc_hash VARCHAR(32) UNIQUE NOT NULL
             )
         ''')
         
@@ -138,103 +138,63 @@ class Transformer:
     #         return None
     
     def find_similar_products(self, product_names):
-        """Шукає схожі продукти в Product_CORE для групи продуктів, зменшуючи кількість запитів до LLM"""
+        """Шукає схожі продукти в Product_CORE для групи продуктів через хеш"""
         cursor = self.conn.cursor(dictionary=True)
-        cursor.execute('SELECT pc_id, pc_desc FROM Product_CORE')
+        cursor.execute('SELECT pc_id, pc_hash FROM Product_CORE')
         existing_products = cursor.fetchall()
 
-        # Групування продуктів для перевірки схожості
-        product_groups = {}
-        for product_name in product_names:
-            product_groups[product_name] = [existing['pc_desc'] for existing in existing_products]
-
-        # Виклик LLM для підтвердження схожості
-        confirmed_similarities = self.llm_confirm_similarities(product_groups)
-
-        # Повернути результати
         similar_products = {}
-        for product_name, similar_descs in confirmed_similarities.items():
-            for desc in similar_descs:
-                for existing in existing_products:
-                    if existing['pc_desc'] == desc:
-                        similar_products[product_name] = existing['pc_id']
-                        break
+        for product_name in product_names:
+            product_hash = self._generate_hash(product_name)
+            for existing in existing_products:
+                if existing['pc_hash'] == product_hash:
+                    similar_products[product_name] = existing['pc_id']
+                    break
 
         return similar_products
 
-    def llm_confirm_similarities(self, product_groups):
-        """Uses LLM to confirm product similarities for a group of products in a single request"""
-        try:
-            # Формування єдиного запиту для LLM
-            prompt = "Чи є ці продукти однаковими або дуже схожими?\n\n"
-            for product_name, candidates in product_groups.items():
-                for candidate in candidates:
-                    prompt += f"Продукт 1: {product_name}\nПродукт 2: {candidate}\n\n"
+    def _generate_hash(self, product_name):
+        """Генерує хеш для продукту"""
+        import hashlib
+        return hashlib.md5(product_name.encode('utf-8')).hexdigest()
+    
+    # def analyze_review_sentiment(self, review_texts):
+    #     """Analyzes sentiment for multiple reviews via a single LLM request"""
+    #     try:
+    #         # Формування єдиного запиту для аналізу кількох відгуків
+    #         prompt = "Проаналізуй сентимент цих відгуків:\n\n"
+    #         for i, review_text in enumerate(review_texts, 1):
+    #             prompt += f"Відгук {i}: \"{review_text}\"\n"
 
-            prompt += "Відповідь дай у форматі: Продукт 1: <назва>, Продукт 2: <назва>, Відповідь: так/ні."
+    #         prompt += "\nВизнач для кожного відгуку:\n1. Сентимент: negative, neutral, або positive\n2. Важливість: high або low\n\nВідповідь дай у форматі: Відгук <номер>: сентимент,важливість"
 
-            resp = self.llm(
-                messages=[{"role": "user", "content": prompt}]
-            )
+    #         resp = self.llm(
+    #             messages=[{"role": "user", "content": prompt}]
+    #         )
 
-            # Обробка відповіді
-            logger.debug(f"LLM response: {resp}")
-            response_content = resp['choices'][0]['message']['content']
-            lines = response_content.strip().split("\n")
+    #         # Обробка відповіді
+    #         logger.debug(f"LLM response: {resp}")
+    #         response_content = resp['choices'][0]['message']['content']
+    #         lines = response_content.strip().split("\n")
 
-            confirmed_similarities = {}
-            for line in lines:
-                if "Відповідь: так" in line:
-                    parts = line.split(",")
-                    product_1 = parts[0].split(": ")[1].strip()
-                    product_2 = parts[1].split(": ")[1].strip()
+    #         sentiments = []
+    #         for line in lines:
+    #             parts = line.split(": ")[1].split(",")
+    #             if len(parts) == 2:
+    #                 sentiment = parts[0].strip()
+    #                 importance = parts[1].strip()
 
-                    if product_1 not in confirmed_similarities:
-                        confirmed_similarities[product_1] = []
-                    confirmed_similarities[product_1].append(product_2)
+    #                 if sentiment in ['negative', 'neutral', 'positive'] and importance in ['high', 'low']:
+    #                     sentiments.append((sentiment, importance))
+    #                 else:
+    #                     sentiments.append(('neutral', 'low'))
+    #             else:
+    #                 sentiments.append(('neutral', 'low'))
 
-            return confirmed_similarities
-        except Exception as e:
-            logger.error(f"Error calling LLM for similarities: {e}")
-            return {}
-
-    def analyze_review_sentiment(self, review_texts):
-        """Analyzes sentiment for multiple reviews via a single LLM request"""
-        try:
-            # Формування єдиного запиту для аналізу кількох відгуків
-            prompt = "Проаналізуй сентимент цих відгуків:\n\n"
-            for i, review_text in enumerate(review_texts, 1):
-                prompt += f"Відгук {i}: \"{review_text}\"\n"
-
-            prompt += "\nВизнач для кожного відгуку:\n1. Сентимент: negative, neutral, або positive\n2. Важливість: high або low\n\nВідповідь дай у форматі: Відгук <номер>: сентимент,важливість"
-
-            resp = self.llm(
-                messages=[{"role": "user", "content": prompt}]
-            )
-
-            # Обробка відповіді
-            logger.debug(f"LLM response: {resp}")
-            response_content = resp['choices'][0]['message']['content']
-            lines = response_content.strip().split("\n")
-
-            sentiments = []
-            for line in lines:
-                parts = line.split(": ")[1].split(",")
-                if len(parts) == 2:
-                    sentiment = parts[0].strip()
-                    importance = parts[1].strip()
-
-                    if sentiment in ['negative', 'neutral', 'positive'] and importance in ['high', 'low']:
-                        sentiments.append((sentiment, importance))
-                    else:
-                        sentiments.append(('neutral', 'low'))
-                else:
-                    sentiments.append(('neutral', 'low'))
-
-            return sentiments
-        except Exception as e:
-            logger.error(f"Error analyzing sentiment: {e}")
-            return [('neutral', 'low')] * len(review_texts)
+    #         return sentiments
+    #     except Exception as e:
+    #         logger.error(f"Error analyzing sentiment: {e}")
+    #         return [('neutral', 'low')] * len(review_texts)
     
     def transform_extract(self, extract_id):
         """Трансформує дані з RAW в CORE для конкретного extract_id"""
@@ -274,9 +234,9 @@ class Transformer:
                 else:
                     # Створити новий продукт в CORE
                     cursor.execute('''
-                        INSERT INTO Product_CORE (pc_desc)
-                        VALUES (%s)
-                    ''', (product_name,))
+                        INSERT INTO Product_CORE (pc_desc, pc_hash)
+                        VALUES (%s, %s)
+                    ''', (product_name, self._generate_hash(product_name)))
                     
                     pc_id = cursor.lastrowid
                     self.conn.commit()
