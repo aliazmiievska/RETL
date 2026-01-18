@@ -1,67 +1,312 @@
-2026-01-18 17:42:15,822 - __main__ - INFO - 
+2026-01-18 17:53:19,569 - __main__ - INFO - 
 ================================================================================
-2026-01-18 17:42:15,822 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 17:42:15
-2026-01-18 17:42:15,822 - __main__ - INFO - ================================================================================
+2026-01-18 17:53:19,569 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 17:53:19
+2026-01-18 17:53:19,569 - __main__ - INFO - ================================================================================
 
-2026-01-18 17:42:15,828 - __main__ - INFO - 
+2026-01-18 17:53:19,569 - __main__ - INFO - 
 ================================================================================
-2026-01-18 17:42:15,828 - __main__ - INFO - STAGE 2: TRANSFORMATION
-2026-01-18 17:42:15,828 - __main__ - INFO - ================================================================================
-2026-01-18 17:42:15,910 - transform - INFO - Connected to MySQL database
-2026-01-18 17:42:15,916 - transform - INFO - Transforming extract 3
-2026-01-18 17:42:15,927 - transform - INFO - Connected to MySQL database
-2026-01-18 17:42:15,927 - transform - INFO - Processing 9 products from extract 3
-2026-01-18 17:42:15,931 - transform - INFO - Created new product in CORE: Angel Schlesser Femme Naturelle
-2026-01-18 17:42:15,931 - transform - INFO - Created new product in CORE: Naturelle Universal Wet Wipes
-2026-01-18 17:42:15,942 - transform - INFO - Created new product in CORE: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 17:42:15,942 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol
-2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Pink Wet Wipes
-2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Kidz
-2026-01-18 17:42:15,947 - transform - INFO - Created new product in CORE: Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 17:42:15,947 - transform - INFO - Transformation completed for extract 3
-2026-01-18 17:42:15,947 - transform - INFO - Transforming extract 5
-2026-01-18 17:42:15,963 - transform - INFO - Connected to MySQL database
-2026-01-18 17:42:15,963 - transform - INFO - Processing 9 products from extract 5
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 17:42:15,963 - transform - INFO - Product already exists: Naturelle Kidz
-2026-01-18 17:42:15,979 - transform - INFO - Created new product in CORE: Naturelle Classic Night
-2026-01-18 17:42:15,979 - transform - INFO - Transformation completed for extract 5
-2026-01-18 17:42:15,979 - transform - INFO - Transforming extract 13
-2026-01-18 17:42:15,986 - transform - INFO - Connected to MySQL database
-2026-01-18 17:42:15,994 - transform - INFO - Processing 26 products from extract 13
-2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Вологі серветки для прибирання
-2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Серветки вологі універсальні
-2026-01-18 17:42:15,996 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки рожеві
-2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 17:42:16,010 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера"
-2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Вологі серветки для очищення взуття
-2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 17:42:16,026 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 17:42:16,042 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Avon Imari Naturelle
-2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Chloe Naturelle
-2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel
-2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense
-2026-01-18 17:42:16,058 - transform - INFO - Created new product in CORE: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 17:42:16,073 - transform - INFO - Created new product in CORE: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 17:42:16,073 - transform - INFO - Created new product in CORE: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 17:42:16,073 - transform - ERROR - Transformation failed: 1062 (23000): Duplicate entry 'ea79bd0c95e715b4c97adcbc0afe563e' for key 'product_core.pc_hash'
-2026-01-18 17:42:16,073 - __main__ - ERROR - ✗ Transformation failed: 1062 (23000): Duplicate entry 'ea79bd0c95e715b4c97adcbc0afe563e' for key 'product_core.pc_hash'
-2026-01-18 17:42:16,073 - __main__ - ERROR - Transformation failed. Skipping load stage.
+2026-01-18 17:53:19,569 - __main__ - INFO - STAGE 2: TRANSFORMATION
+2026-01-18 17:53:19,569 - __main__ - INFO - ================================================================================
+2026-01-18 17:53:19,649 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,649 - transform - INFO - Transforming extract 3
+2026-01-18 17:53:19,681 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,681 - transform - INFO - Processing 9 products from extract 3
+2026-01-18 17:53:19,681 - transform - INFO - Created new product in CORE: Angel Schlesser Femme Naturelle
+2026-01-18 17:53:19,681 - transform - INFO - Created new product in CORE: Angel Schlesser Femme Naturelle
+2026-01-18 17:53:19,681 - transform - INFO - Created new product in CORE: Naturelle Universal Wet Wipes
+2026-01-18 17:53:19,681 - transform - INFO - Created new product in CORE: Naturelle Universal Wet Wipes
+2026-01-18 17:53:19,681 - transform - INFO - Created new product in CORE: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:19,681 - transform - INFO - Created new product in CORE: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Pink Wet Wipes
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Pink Wet Wipes
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Kidz
+2026-01-18 17:53:19,697 - transform - INFO - Created new product in CORE: Naturelle Kidz
+2026-01-18 17:53:19,712 - transform - INFO - Created new product in CORE: Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:19,712 - transform - INFO - Created new product in CORE: Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:19,712 - transform - INFO - Transformation completed for extract 3
+2026-01-18 17:53:19,712 - transform - INFO - Transforming extract 5
+2026-01-18 17:53:19,730 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,730 - transform - INFO - Processing 9 products from extract 5
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:19,730 - transform - INFO - Product already exists: Naturelle Kidz
+2026-01-18 17:53:19,730 - transform - INFO - Created new product in CORE: Naturelle Classic Night
+2026-01-18 17:53:19,730 - transform - INFO - Created new product in CORE: Naturelle Classic Night
+2026-01-18 17:53:19,730 - transform - INFO - Transformation completed for extract 5
+2026-01-18 17:53:19,730 - transform - INFO - Transforming extract 13
+2026-01-18 17:53:19,748 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,748 - transform - INFO - Processing 26 products from extract 13
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Вологі серветки для прибирання
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Вологі серветки для прибирання
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Серветки вологі універсальні
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Серветки вологі універсальні
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 17:53:19,760 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 17:53:19,776 - transform - INFO - Created new product in CORE: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 17:53:19,776 - transform - INFO - Created new product in CORE: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Вологі серветки рожеві
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Вологі серветки рожеві
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 17:53:19,778 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера"
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера"
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Вологі серветки для очищення взуття
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Вологі серветки для очищення взуття
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 17:53:19,792 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 17:53:19,808 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 17:53:19,808 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 17:53:19,814 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 17:53:19,814 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 17:53:19,814 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 17:53:19,814 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 17:53:19,824 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 17:53:19,824 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 17:53:19,828 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 17:53:19,828 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 17:53:19,828 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 17:53:19,828 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 17:53:19,828 - transform - INFO - Created new product in CORE: Avon Imari Naturelle
+2026-01-18 17:53:19,828 - transform - INFO - Created new product in CORE: Avon Imari Naturelle
+2026-01-18 17:53:19,839 - transform - INFO - Created new product in CORE: Chloe Naturelle
+2026-01-18 17:53:19,839 - transform - INFO - Created new product in CORE: Chloe Naturelle
+2026-01-18 17:53:19,839 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel
+2026-01-18 17:53:19,845 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel
+2026-01-18 17:53:19,845 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,845 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,845 - transform - INFO - Created new product in CORE: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:53:19,845 - transform - INFO - Created new product in CORE: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:53:19,855 - transform - INFO - Created new product in CORE: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 17:53:19,855 - transform - INFO - Created new product in CORE: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 17:53:19,855 - transform - INFO - Created new product in CORE: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 17:53:19,855 - transform - INFO - Created new product in CORE: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 17:53:19,855 - transform - WARNING - Duplicate product detected: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,855 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,855 - transform - INFO - Transformation completed for extract 13
+2026-01-18 17:53:19,855 - transform - INFO - Transforming extract 14
+2026-01-18 17:53:19,871 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,871 - transform - INFO - Processing 26 products from extract 14
+2026-01-18 17:53:19,871 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 17:53:19,871 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 17:53:19,878 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,887 - transform - INFO - Created new product in CORE: Гігієнічні прокладки, 14 шт
+2026-01-18 17:53:19,887 - transform - INFO - Created new product in CORE: Гігієнічні прокладки, 14 шт
+2026-01-18 17:53:19,887 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 17:53:19,887 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 17:53:19,887 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,887 - transform - INFO - Transformation completed for extract 14
+2026-01-18 17:53:19,887 - transform - INFO - Transforming extract 16
+2026-01-18 17:53:19,903 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,903 - transform - INFO - Processing 26 products from extract 16
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 17:53:19,903 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 17:53:19,911 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 17:53:19,911 - transform - INFO - Transformation completed for extract 16
+2026-01-18 17:53:19,919 - transform - INFO - Transforming extract 24
+2026-01-18 17:53:19,928 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:19,928 - transform - INFO - Processing 25 products from extract 24
+2026-01-18 17:53:19,935 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 17:53:19,935 - transform - INFO - Created new product in CORE: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 17:53:19,935 - transform - INFO - Created new product in CORE: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:19,935 - transform - INFO - Created new product in CORE: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:19,935 - transform - INFO - Created new product in CORE: Серветки вологі універсальні Naturelle
+2026-01-18 17:53:19,935 - transform - INFO - Created new product in CORE: Серветки вологі універсальні Naturelle
+2026-01-18 17:53:19,945 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:19,945 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:19,945 - transform - INFO - Created new product in CORE: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,950 - transform - INFO - Created new product in CORE: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,950 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:19,950 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:19,950 - transform - INFO - Created new product in CORE: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 17:53:19,950 - transform - INFO - Created new product in CORE: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 17:53:19,964 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 17:53:19,964 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 17:53:19,966 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 17:53:19,966 - transform - INFO - Created new product in CORE: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 17:53:19,966 - transform - INFO - Created new product in CORE: Вологі серветки для очищення взуття Naturelle
+2026-01-18 17:53:19,966 - transform - INFO - Created new product in CORE: Вологі серветки для очищення взуття Naturelle
+2026-01-18 17:53:19,966 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 17:53:19,966 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 17:53:19,978 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:19,978 - transform - INFO - Created new product in CORE: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:19,982 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 17:53:19,982 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 17:53:19,982 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 17:53:19,982 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 17:53:19,982 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,995 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Chloe Naturelle Парфумована вода
+2026-01-18 17:53:19,998 - transform - INFO - Created new product in CORE: Chloe Naturelle Парфумована вода
+2026-01-18 17:53:20,014 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 17:53:20,014 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 17:53:20,014 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 17:53:20,014 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 17:53:20,014 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:53:20,028 - transform - INFO - Created new product in CORE: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 17:53:20,028 - transform - INFO - Created new product in CORE: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 17:53:20,030 - transform - INFO - Created new product in CORE: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 17:53:20,030 - transform - INFO - Created new product in CORE: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 17:53:20,030 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 17:53:20,030 - transform - INFO - Created new product in CORE: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 17:53:20,030 - transform - INFO - Transformation completed for extract 24
+2026-01-18 17:53:20,030 - transform - INFO - Transforming extract 26
+2026-01-18 17:53:20,047 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:20,047 - transform - INFO - Processing 25 products from extract 26
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:53:20,047 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 17:53:20,061 - transform - INFO - Transformation completed for extract 26
+2026-01-18 17:53:20,061 - transform - INFO - Transforming extract 27
+2026-01-18 17:53:20,061 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:20,061 - transform - INFO - Processing 25 products from extract 27
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:20,061 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 17:53:20,077 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 17:53:20,077 - transform - INFO - Transformation completed for extract 27
+2026-01-18 17:53:20,077 - transform - INFO - Transforming extract 28
+2026-01-18 17:53:20,097 - transform - INFO - Connected to MySQL database
+2026-01-18 17:53:20,097 - transform - INFO - Processing 25 products from extract 28
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 17:53:20,097 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 17:53:20,109 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 17:53:20,109 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 17:53:20,109 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 17:53:20,109 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 17:53:20,111 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel Парфумована вода
+2026-01-18 17:53:20,111 - transform - INFO - Created new product in CORE: Chloé Nomade Jasmin Naturel Парфумована вода
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 17:53:20,111 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 17:53:20,111 - transform - INFO - Transformation completed for extract 28
+2026-01-18 17:53:20,111 - __main__ - INFO - ✓ Transformation completed successfully
+2026-01-18 17:53:20,111 - __main__ - INFO - 
+================================================================================
+2026-01-18 17:53:20,111 - __main__ - INFO - RETL PIPELINE COMPLETED SUCCESSFULLY
+2026-01-18 17:53:20,111 - __main__ - INFO - Duration: 0:00:00.541991
+2026-01-18 17:53:20,111 - __main__ - INFO - End time: 2026-01-18 17:53:20
+2026-01-18 17:53:20,111 - __main__ - INFO - ================================================================================
+

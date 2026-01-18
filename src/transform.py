@@ -233,10 +233,18 @@ class Transformer:
                     pc_id = similar_pc_id
                 else:
                     # Створити новий продукт в CORE
-                    cursor.execute('''
-                        INSERT INTO Product_CORE (pc_desc, pc_hash)
-                        VALUES (%s, %s)
-                    ''', (product_name, self._generate_hash(product_name)))
+                    try:
+                        cursor.execute('''
+                            INSERT INTO Product_CORE (pc_desc, pc_hash)
+                            VALUES (%s, %s)
+                        ''', (product_name, self._generate_hash(product_name)))
+                        self.conn.commit()
+                        logger.info(f"Created new product in CORE: {product_name}")
+                    except mysql.connector.IntegrityError as e:
+                        if e.errno == 1062:  # Duplicate entry
+                            logger.warning(f"Duplicate product detected: {product_name}")
+                        else:
+                            raise
                     
                     pc_id = cursor.lastrowid
                     self.conn.commit()
