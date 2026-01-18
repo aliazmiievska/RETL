@@ -1,654 +1,268 @@
-2026-01-18 19:37:36,857 - __main__ - INFO - 
+2026-01-18 19:47:08,623 - __main__ - INFO - 
 ================================================================================
-2026-01-18 19:37:36,857 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 19:37:36
-2026-01-18 19:37:36,857 - __main__ - INFO - ================================================================================
+2026-01-18 19:47:08,623 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 19:47:08
+2026-01-18 19:47:08,623 - __main__ - INFO - ================================================================================
 
-2026-01-18 19:37:36,865 - __main__ - INFO - 
+2026-01-18 19:47:08,633 - __main__ - INFO - 
 ================================================================================
-2026-01-18 19:37:36,865 - __main__ - INFO - STAGE 2: TRANSFORMATION
-2026-01-18 19:37:36,867 - __main__ - INFO - ================================================================================
-2026-01-18 19:37:37,123 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,134 - transform - INFO - Transforming extract 3
-2026-01-18 19:37:37,155 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,155 - transform - INFO - Processing 9 products from extract 3
-2026-01-18 19:37:37,155 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
-2026-01-18 19:37:37,155 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
-2026-01-18 19:37:37,164 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:37:37,166 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
-2026-01-18 19:37:37,166 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
-2026-01-18 19:37:37,166 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,166 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:37:37,166 - transform - INFO - Product already exists: Naturelle Kidz
-2026-01-18 19:37:37,166 - transform - INFO - Product already exists: Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:37:37,166 - transform - INFO - Transformation completed for extract 3
-2026-01-18 19:37:37,166 - transform - INFO - Transforming extract 5
-2026-01-18 19:37:37,180 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,180 - transform - INFO - Processing 9 products from extract 5
-2026-01-18 19:37:37,180 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Kidz
-2026-01-18 19:37:37,187 - transform - INFO - Product already exists: Naturelle Classic Night
-2026-01-18 19:37:37,196 - transform - INFO - Transformation completed for extract 5
-2026-01-18 19:37:37,198 - transform - INFO - Transforming extract 13
-2026-01-18 19:37:37,209 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,212 - transform - INFO - Processing 26 products from extract 13
-2026-01-18 19:37:37,212 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 19:37:37,212 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,219 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,219 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,228 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,228 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,230 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - INFO - Product already exists: Вологі серветки для прибирання
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,230 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,230 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,230 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,230 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,230 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,230 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,241 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,241 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,241 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,241 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,241 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,244 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,244 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,244 - transform - INFO - Product already exists: Серветки вологі універсальні
-2026-01-18 19:37:37,244 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,244 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,244 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,244 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,244 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,244 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,251 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,251 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,260 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,260 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,260 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,260 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,262 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,262 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,262 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,262 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,262 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,262 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,262 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,262 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,262 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,262 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,262 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 19:37:37,262 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,262 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,273 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,273 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,273 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,273 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,273 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,275 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,275 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,275 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,275 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,275 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,275 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,275 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,275 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,275 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,275 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,283 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,283 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,291 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,291 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,291 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,291 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 19:37:37,294 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,294 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,294 - transform - INFO - Product already exists: Вологі серветки рожеві
-2026-01-18 19:37:37,305 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,305 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,305 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,305 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,305 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,307 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,307 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,307 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,307 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 19:37:37,307 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,307 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,307 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,307 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,307 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,307 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,307 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,307 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,315 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,315 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,315 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,315 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,315 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
-2026-01-18 19:37:37,315 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,315 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,315 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,315 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,315 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,315 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,315 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,315 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,323 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,323 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,323 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,323 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,326 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,326 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,326 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
-2026-01-18 19:37:37,326 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,326 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,326 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,326 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,326 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 19:37:37,336 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,336 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,336 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,336 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,339 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,339 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,339 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 19:37:37,341 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,341 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,343 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,343 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,343 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 19:37:37,347 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,347 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,347 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,347 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,347 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,347 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,347 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 19:37:37,347 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,347 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,354 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,354 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,354 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 19:37:37,354 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,354 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,354 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,354 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,358 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 19:37:37,358 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,358 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,358 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,358 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,358 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 19:37:37,358 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,358 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,358 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,358 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,358 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,358 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,358 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 19:37:37,369 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,369 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,370 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,370 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,370 - transform - INFO - Product already exists: Avon Imari Naturelle
-2026-01-18 19:37:37,370 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,370 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,370 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,370 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,370 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,370 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,370 - transform - INFO - Product already exists: Chloe Naturelle
-2026-01-18 19:37:37,370 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,370 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,380 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,380 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,380 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,380 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,380 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,380 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,380 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,380 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,380 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,380 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,386 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,386 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,386 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,386 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,386 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,386 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,390 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,390 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,390 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,390 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,390 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,390 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,390 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,390 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,390 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,390 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,390 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,390 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,401 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,401 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,401 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,402 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,402 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,402 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,402 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,402 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,402 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,402 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,402 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,402 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,402 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,402 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,402 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,407 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,407 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,407 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,407 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,407 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,407 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,407 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,407 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
-2026-01-18 19:37:37,411 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,411 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,411 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,411 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,411 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,411 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,411 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,411 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,418 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,418 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,418 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,418 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,418 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,418 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,418 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,418 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,422 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,422 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,433 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,433 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,434 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,434 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,434 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,434 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,434 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,434 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,434 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:37:37,434 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,443 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,443 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,443 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,443 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,443 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,443 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,443 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,450 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,450 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,450 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,450 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,450 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,450 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,450 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,450 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,454 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,454 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,454 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,454 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,454 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,454 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,454 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 19:37:37,454 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,454 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,454 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,454 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,454 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,454 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,465 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,465 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,466 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,466 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,476 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,476 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,476 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 19:37:37,478 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,478 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,482 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,482 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,482 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,482 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,482 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,482 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,486 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,486 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,497 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,498 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,498 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,498 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,498 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,498 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,498 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,498 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,498 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:37:37,507 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,507 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,507 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,507 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,507 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,507 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,507 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,507 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,507 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,514 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,514 - transform - ERROR - Error analyzing sentiment: 'Transformer' object has no attribute 'llm'
-2026-01-18 19:37:37,514 - transform - ERROR - Error processing review: too many values to unpack (expected 2)
-2026-01-18 19:37:37,514 - transform - INFO - Transformation completed for extract 13
-2026-01-18 19:37:37,514 - transform - INFO - Transforming extract 14
-2026-01-18 19:37:37,529 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,530 - transform - INFO - Processing 26 products from extract 14
-2026-01-18 19:37:37,530 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 19:37:37,530 - transform - INFO - Product already exists: Вологі серветки для прибирання
-2026-01-18 19:37:37,530 - transform - INFO - Product already exists: Серветки вологі універсальні
-2026-01-18 19:37:37,530 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 19:37:37,530 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 19:37:37,530 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 19:37:37,539 - transform - INFO - Product already exists: Вологі серветки рожеві
-2026-01-18 19:37:37,539 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 19:37:37,539 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
-2026-01-18 19:37:37,539 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
-2026-01-18 19:37:37,539 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 19:37:37,546 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 19:37:37,546 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 19:37:37,546 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Avon Imari Naturelle
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Chloe Naturelle
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 19:37:37,550 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:37:37,550 - transform - INFO - Transformation completed for extract 14
-2026-01-18 19:37:37,550 - transform - INFO - Transforming extract 16
-2026-01-18 19:37:37,571 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,571 - transform - INFO - Processing 26 products from extract 16
-2026-01-18 19:37:37,577 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 19:37:37,577 - transform - INFO - Product already exists: Вологі серветки для прибирання
-2026-01-18 19:37:37,577 - transform - INFO - Product already exists: Серветки вологі універсальні
-2026-01-18 19:37:37,582 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 19:37:37,582 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 19:37:37,582 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 19:37:37,582 - transform - INFO - Product already exists: Вологі серветки рожеві
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 19:37:37,586 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Avon Imari Naturelle
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Chloe Naturelle
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:37:37,593 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
-2026-01-18 19:37:37,603 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 19:37:37,603 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 19:37:37,603 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:37:37,603 - transform - INFO - Transformation completed for extract 16
-2026-01-18 19:37:37,603 - transform - INFO - Transforming extract 24
-2026-01-18 19:37:37,614 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,614 - transform - INFO - Processing 25 products from extract 24
-2026-01-18 19:37:37,614 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:37:37,624 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:37:37,635 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:37:37,635 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:37:37,635 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:37:37,635 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:37:37,635 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:37:37,640 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,640 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:37:37,640 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,640 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,640 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:37:37,640 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
-2026-01-18 19:37:37,646 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:37:37,646 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:37:37,646 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:37:37,646 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:37:37,646 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:37:37,646 - transform - INFO - Transformation completed for extract 24
-2026-01-18 19:37:37,646 - transform - INFO - Transforming extract 26
-2026-01-18 19:37:37,656 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,667 - transform - INFO - Processing 25 products from extract 26
-2026-01-18 19:37:37,667 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:37:37,667 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:37:37,667 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:37:37,672 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:37:37,672 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,672 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:37:37,672 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:37:37,672 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:37:37,672 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:37:37,678 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,686 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,686 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:37:37,689 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
-2026-01-18 19:37:37,689 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:37:37,689 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:37:37,689 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:37:37,689 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:37:37,689 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:37:37,689 - transform - INFO - Transformation completed for extract 26
-2026-01-18 19:37:37,689 - transform - INFO - Transforming extract 27
-2026-01-18 19:37:37,704 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,704 - transform - INFO - Processing 25 products from extract 27
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:37:37,710 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:37:37,720 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,731 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,731 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:37:37,731 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
-2026-01-18 19:37:37,731 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:37:37,735 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:37:37,735 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:37:37,735 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:37:37,735 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:37:37,735 - transform - INFO - Transformation completed for extract 27
-2026-01-18 19:37:37,735 - transform - INFO - Transforming extract 28
-2026-01-18 19:37:37,751 - transform - INFO - Connected to MySQL database
-2026-01-18 19:37:37,753 - transform - INFO - Processing 25 products from extract 28
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:37:37,753 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:37:37,763 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:37:37,763 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,767 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:37:37,774 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:37:37,782 - transform - INFO - Transformation completed for extract 28
-2026-01-18 19:37:37,782 - __main__ - INFO - ✓ Transformation completed successfully
-2026-01-18 19:37:37,782 - __main__ - INFO - 
+2026-01-18 19:47:08,633 - __main__ - INFO - STAGE 2: TRANSFORMATION
+2026-01-18 19:47:08,633 - __main__ - INFO - ================================================================================
+2026-01-18 19:47:11,183 - transform - INFO - Connected to MySQL database
+2026-01-18 19:47:11,183 - transform - INFO - Transforming extract 3
+2026-01-18 19:47:11,194 - transform - INFO - Connected to MySQL database
+2026-01-18 19:47:11,194 - transform - INFO - Processing 9 products from extract 3
+2026-01-18 19:47:11,194 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
+2026-01-18 19:47:11,194 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
+2026-01-18 19:47:11,204 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 19:47:11,204 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
+2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
+2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Kidz
+2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 19:47:12,168 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:47:12,900 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:47:12,900 - transform - INFO - Transformation completed for extract 3
+2026-01-18 19:47:12,900 - transform - INFO - Transforming extract 5
+2026-01-18 19:47:12,922 - transform - INFO - Connected to MySQL database
+2026-01-18 19:47:12,922 - transform - INFO - Processing 9 products from extract 5
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Kidz
+2026-01-18 19:47:12,932 - transform - INFO - Product already exists: Naturelle Classic Night
+2026-01-18 19:47:22,981 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:47:34,074 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:47:34,074 - transform - INFO - Transformation completed for extract 5
+2026-01-18 19:47:34,074 - transform - INFO - Transforming extract 13
+2026-01-18 19:47:34,085 - transform - INFO - Connected to MySQL database
+2026-01-18 19:47:34,085 - transform - INFO - Processing 26 products from extract 13
+2026-01-18 19:47:34,085 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 19:47:34,096 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 19:47:34,101 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 19:47:34,111 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 19:47:34,117 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 19:47:34,117 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 19:47:34,128 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 19:47:34,128 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 19:47:34,133 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 19:47:34,149 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 19:47:34,153 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 19:47:34,153 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 19:47:34,153 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 19:47:34,165 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 19:47:34,170 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 19:47:34,170 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 19:47:34,176 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 19:47:34,181 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 19:47:34,181 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 19:47:37,536 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:47:55,050 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:47:55,163 - transform - INFO - Transformation completed for extract 13
+2026-01-18 19:47:55,163 - transform - INFO - Transforming extract 14
+2026-01-18 19:47:55,177 - transform - INFO - Connected to MySQL database
+2026-01-18 19:47:55,177 - transform - INFO - Processing 26 products from extract 14
+2026-01-18 19:47:55,177 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 19:47:55,193 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
+2026-01-18 19:47:55,206 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 19:47:55,206 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 19:47:55,206 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 19:47:55,564 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:49:07,009 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:49:07,010 - transform - INFO - Transformation completed for extract 14
+2026-01-18 19:49:07,010 - transform - INFO - Transforming extract 16
+2026-01-18 19:49:07,024 - transform - INFO - Connected to MySQL database
+2026-01-18 19:49:07,025 - transform - INFO - Processing 26 products from extract 16
+2026-01-18 19:49:07,026 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 19:49:07,028 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 19:49:07,029 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 19:49:07,030 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 19:49:07,031 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 19:49:07,032 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 19:49:07,033 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 19:49:07,034 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 19:49:07,034 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 19:49:07,036 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 19:49:07,038 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 19:49:07,039 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 19:49:07,040 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 19:49:07,041 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 19:49:07,041 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 19:49:07,042 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 19:49:07,043 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 19:49:07,044 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 19:49:07,045 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 19:49:07,045 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 19:49:07,046 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 19:49:07,047 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 19:49:07,047 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
+2026-01-18 19:49:07,048 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 19:49:07,048 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 19:49:07,049 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 19:49:08,237 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:49:17,091 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:49:17,091 - transform - INFO - Transformation completed for extract 16
+2026-01-18 19:49:17,091 - transform - INFO - Transforming extract 24
+2026-01-18 19:49:17,096 - transform - INFO - Connected to MySQL database
+2026-01-18 19:49:17,096 - transform - INFO - Processing 25 products from extract 24
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 19:49:27,192 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:49:57,933 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:49:57,933 - transform - INFO - Transformation completed for extract 24
+2026-01-18 19:49:57,936 - transform - INFO - Transforming extract 26
+2026-01-18 19:49:57,940 - transform - INFO - Connected to MySQL database
+2026-01-18 19:49:57,940 - transform - INFO - Processing 25 products from extract 26
+2026-01-18 19:49:57,949 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 19:49:57,972 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 19:49:57,972 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 19:49:59,033 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:50:07,786 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:50:07,791 - transform - INFO - Transformation completed for extract 26
+2026-01-18 19:50:07,791 - transform - INFO - Transforming extract 27
+2026-01-18 19:50:07,801 - transform - INFO - Connected to MySQL database
+2026-01-18 19:50:07,807 - transform - INFO - Processing 25 products from extract 27
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 19:50:07,822 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 19:50:07,822 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 19:50:07,825 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 19:50:07,827 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 19:50:07,827 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 19:50:07,828 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 19:50:07,828 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 19:50:07,831 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 19:50:07,831 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 19:50:08,223 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:57:03,990 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:57:03,990 - transform - INFO - Transformation completed for extract 27
+2026-01-18 19:57:03,990 - transform - INFO - Transforming extract 28
+2026-01-18 19:57:04,006 - transform - INFO - Connected to MySQL database
+2026-01-18 19:57:04,011 - transform - INFO - Processing 25 products from extract 28
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 19:57:04,032 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 19:57:04,032 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 19:57:05,004 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 19:57:14,401 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 19:57:14,401 - transform - INFO - Transformation completed for extract 28
+2026-01-18 19:57:14,411 - __main__ - INFO - ✓ Transformation completed successfully
+2026-01-18 19:57:14,411 - __main__ - INFO - 
 ================================================================================
-2026-01-18 19:37:37,782 - __main__ - INFO - RETL PIPELINE COMPLETED SUCCESSFULLY
-2026-01-18 19:37:37,782 - __main__ - INFO - Duration: 0:00:00.925789
-2026-01-18 19:37:37,782 - __main__ - INFO - End time: 2026-01-18 19:37:37
-2026-01-18 19:37:37,782 - __main__ - INFO - ================================================================================
+2026-01-18 19:57:14,411 - __main__ - INFO - RETL PIPELINE COMPLETED SUCCESSFULLY
+2026-01-18 19:57:14,411 - __main__ - INFO - Duration: 0:10:05.788363
+2026-01-18 19:57:14,411 - __main__ - INFO - End time: 2026-01-18 19:57:14
+2026-01-18 19:57:14,411 - __main__ - INFO - ================================================================================
 

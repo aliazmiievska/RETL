@@ -14,13 +14,13 @@ class Transformer:
         self.conn = None
         self.similarity_threshold = 0.9
 
-        --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
+        # --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
         openrouter_conf = self.config.get('openrouter', {})
         api_key = openrouter_conf.get('api_key')
         base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
         model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
 
-        LangChain OpenAI wrapper supports custom endpoint via openai_api_base
+        # LangChain OpenAI wrapper supports custom endpoint via openai_api_base
         self.llm = ChatOpenAI(
             model=model,
             openai_api_key=api_key,
@@ -138,7 +138,7 @@ class Transformer:
         try:
             self._connect_db()
             cursor = self.conn.cursor(dictionary=True)
-            
+
             # Отримати всі продукти з RAW для цього extract
             cursor.execute('''
                 SELECT pr.*, e.extract_fk_source
@@ -146,12 +146,16 @@ class Transformer:
                 JOIN Extracts e ON pr.extract_fk_pr = e.extract_id
                 WHERE pr.extract_fk_pr = %s
             ''', (extract_id,))
-            
+
             raw_products = cursor.fetchall()
             logger.info(f"Processing {len(raw_products)} products from extract {extract_id}")
-            
+
             product_names = [raw_product['pr_name'] for raw_product in raw_products]
             similar_products = self.find_similar_products(product_names)
+
+            # Зібрати всі відгуки для пакетного аналізу
+            all_reviews = []
+            review_map = {}
 
             for raw_product in raw_products:
                 product_name = raw_product['pr_name']
@@ -175,49 +179,61 @@ class Transformer:
                             logger.warning(f"Duplicate product detected: {product_name}")
                         else:
                             raise
-                    
+
                     pc_id = cursor.lastrowid
                     self.conn.commit()
                     logger.info(f"Created new product in CORE: {product_name}")
-                
-                # Обробити відгуки для цього продукту
+
+                # Отримати всі відгуки для продукту
                 cursor.execute('''
                     SELECT * FROM Review_RAW WHERE pr_fk_rr = %s
                 ''', (raw_product['pr_id'],))
-                
+
                 raw_reviews = cursor.fetchall()
-                
+
                 for raw_review in raw_reviews:
-                    try:
-                        # Перевірити чи відгук вже існує (по hash)
-                        cursor.execute('SELECT rc_id FROM Review_CORE WHERE rc_hash = %s', 
-                                    (raw_review['rr_hash'],))
-                        
-                        if cursor.fetchone():
-                            logger.debug(f"Review already exists: {raw_review['rr_hash']}")
-                            continue
-                        
-                        # Аналіз сентименту та важливості
-                        sentiment, importance = self.analyze_review_sentiment(raw_review['rr_text'])
-                        
-                        # Додати відгук в CORE
-                        cursor.execute('''
-                            INSERT INTO Review_CORE 
-                            (pc_fk_rc, rc_text, rc_source, rc_date, rc_sentiment, rc_importance, rc_hash)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s)
-                        ''', (pc_id, raw_review['rr_text'], raw_product['extract_fk_source'],
-                            raw_review['rr_date'], sentiment, importance, raw_review['rr_hash']))
-                        
-                        logger.debug(f"Added review to CORE: {raw_review['rr_hash']}")
-                        
-                    except Exception as e:
-                        logger.error(f"Error processing review: {e}")
+                    # Перевірити чи відгук вже існує (по hash)
+                    cursor.execute('SELECT rc_id FROM Review_CORE WHERE rc_hash = %s', 
+                                (raw_review['rr_hash'],))
+
+                    if cursor.fetchone():
+                        logger.debug(f"Review already exists: {raw_review['rr_hash']}")
                         continue
-                
-                self.conn.commit()
-            
+
+                    # Додати відгук до списку для аналізу
+                    all_reviews.append(raw_review['rr_text'])
+                    review_map[raw_review['rr_text']] = {
+                        'pc_id': pc_id,
+                        'raw_review': raw_review,
+                        'source': raw_product['extract_fk_source']
+                    }
+
+            # Аналіз сентименту для всіх відгуків
+            sentiments = self.analyze_review_sentiment(all_reviews)
+
+            # Додати результати аналізу до CORE
+            for review_text, sentiment in zip(all_reviews, sentiments):
+                review_data = review_map[review_text]
+                raw_review = review_data['raw_review']
+
+                try:
+                    cursor.execute('''
+                        INSERT INTO Review_CORE 
+                        (pc_fk_rc, rc_text, rc_source, rc_date, rc_sentiment, rc_hash)
+                        VALUES (%s, %s, %s, %s, %s, %s)
+                    ''', (review_data['pc_id'], raw_review['rr_text'], review_data['source'],
+                        raw_review['rr_date'], sentiment, raw_review['rr_hash']))
+
+                    logger.debug(f"Added review to CORE: {raw_review['rr_hash']}")
+
+                except Exception as e:
+                    logger.error(f"Error processing review: {e}")
+                    continue
+
+            self.conn.commit()
+
             logger.info(f"Transformation completed for extract {extract_id}")
-            
+
         except Exception as e:
             logger.error(f"Transformation failed: {e}")
             raise
