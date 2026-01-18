@@ -14,20 +14,20 @@ class Transformer:
         self.conn = None
         self.similarity_threshold = 0.9
 
-        # --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
-        # openrouter_conf = self.config.get('openrouter', {})
-        # api_key = openrouter_conf.get('api_key')
-        # base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
-        # model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
+        --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
+        openrouter_conf = self.config.get('openrouter', {})
+        api_key = openrouter_conf.get('api_key')
+        base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
+        model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
 
-        # LangChain OpenAI wrapper supports custom endpoint via openai_api_base
-        # self.llm = ChatOpenAI(
-        #     model=model,
-        #     openai_api_key=api_key,
-        #     openai_api_base=base_url,
-        #     temperature=0.0,
-        #     timeout=120,
-        # )
+        LangChain OpenAI wrapper supports custom endpoint via openai_api_base
+        self.llm = ChatOpenAI(
+            model=model,
+            openai_api_key=api_key,
+            openai_api_base=base_url,
+            temperature=0.0,
+            timeout=120,
+        )
 
     def _load_config(self, path):
         with open(path, 'r', encoding='utf-8') as f:
@@ -120,7 +120,6 @@ class Transformer:
                 parts = line.split(": ")[1].split(",")
                 if len(parts) == 2:
                     sentiment = parts[0].strip()
-                    importance = parts[1].strip()
 
                     if sentiment in ['negative', 'neutral', 'positive']:
                         sentiments.append((sentiment))
