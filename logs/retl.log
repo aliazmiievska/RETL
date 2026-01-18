@@ -1,21 +1,8 @@
-2026-01-18 13:19:43,131 - __main__ - INFO - 
+2026-01-18 15:14:16,467 - __main__ - INFO - 
 ================================================================================
-2026-01-18 13:19:43,131 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 13:19:43
-2026-01-18 13:19:43,131 - __main__ - INFO - ================================================================================
+2026-01-18 15:14:16,467 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 15:14:16
+2026-01-18 15:14:16,467 - __main__ - INFO - ================================================================================
 
-2026-01-18 13:19:43,131 - __main__ - INFO - ================================================================================
-2026-01-18 13:19:43,131 - __main__ - INFO - STAGE 1: EXTRACTION
-2026-01-18 13:19:43,131 - __main__ - INFO - ================================================================================
-2026-01-18 13:19:44,080 - __main__ - INFO - 
-Extracting from makeup.com.ua
-2026-01-18 13:19:44,143 - extract - INFO - Connected to MySQL database
-2026-01-18 13:19:44,143 - extract - INFO - Created extract entry with ID: 20
-2026-01-18 13:19:44,143 - extract - INFO - Fetching products from https://makeup.com.ua/ua/search/?q=naturelle
-2026-01-18 13:19:54,993 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
-2026-01-18 13:19:55,000 - extract - ERROR - Error fetching products: Error code: 400 - {'error': {'message': 'invalid model ID', 'type': 'invalid_request_error', 'param': None, 'code': None}}
-2026-01-18 13:19:55,000 - extract - WARNING - No products found
-2026-01-18 13:19:55,008 - extract - ERROR - Unexpected error in get_extract_status: MySQL Connection not available.
-2026-01-18 13:19:55,008 - __main__ - INFO - 
-Extraction Summary:
-2026-01-18 13:19:55,008 - __main__ - INFO -   ✗ makeup.com.ua: failed
-2026-01-18 13:19:55,008 - __main__ - WARNING - No successful extractions. Pipeline stopped.
+2026-01-18 15:14:16,475 - __main__ - INFO - ================================================================================
+2026-01-18 15:14:16,475 - __main__ - INFO - STAGE 1: EXTRACTION
+2026-01-18 15:14:16,475 - __main__ - INFO - ================================================================================

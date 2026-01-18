@@ -33,11 +33,22 @@ class Extractor:
         self.conn = None
         self.current_extract_id = None
         
-        os.environ["OPENAI_API_KEY"] = self.config.get('openai', {}).get('api_key')
+        # --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
+        # Очікується, що config/api_keys.yaml має:
+        # openrouter:
+        #   api_key: "..."
+        #   base_url: "https://openrouter.ai/api/v1"
+        #   model: "mistralai/MiMo-V2-Flash"
+        openrouter_conf = self.config.get('openrouter', {})
+        api_key = openrouter_conf.get('api_key')
+        base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
+        model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
 
+        # LangChain OpenAI wrapper підтримує кастомний endpoint через openai_api_base
         self.llm = ChatOpenAI(
-            model=self.config.get('openai_model', ' gpt-4o-mini'),
-            # gpt-4o # gpt-4o-mini # gpt-4.1 # gpt-4.1-mini # gpt-4.1-preview
+            model=model,
+            openai_api_key=api_key,
+            openai_api_base=base_url,
             temperature=0.0,
             timeout=120,
         )
