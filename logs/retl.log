@@ -1,268 +1,427 @@
-2026-01-18 19:47:08,623 - __main__ - INFO - 
+2026-01-18 21:13:14,448 - __main__ - INFO - 
 ================================================================================
-2026-01-18 19:47:08,623 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 19:47:08
-2026-01-18 19:47:08,623 - __main__ - INFO - ================================================================================
+2026-01-18 21:13:14,448 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 21:13:14
+2026-01-18 21:13:14,448 - __main__ - INFO - ================================================================================
 
-2026-01-18 19:47:08,633 - __main__ - INFO - 
+2026-01-18 21:13:14,453 - __main__ - INFO - ================================================================================
+2026-01-18 21:13:14,453 - __main__ - INFO - STAGE 1: EXTRACTION
+2026-01-18 21:13:14,453 - __main__ - INFO - ================================================================================
+2026-01-18 21:13:15,541 - __main__ - INFO - 
+Extracting from makeup.com.ua
+2026-01-18 21:13:15,604 - extract - INFO - Connected to MySQL database
+2026-01-18 21:13:15,620 - extract - INFO - Created extract entry with ID: 31
+2026-01-18 21:13:15,620 - extract - INFO - Fetching products from https://makeup.com.ua/ua/search/?q=naturelle
+2026-01-18 21:13:30,048 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:13:45,186 - extract - INFO - Fetched 36 products from https://makeup.com.ua/ua/search/?q=naturelle
+2026-01-18 21:13:45,204 - extract - INFO - Saved 26 valid products
+2026-01-18 21:13:45,205 - extract - INFO - Fetching reviews for product 223
+2026-01-18 21:13:46,426 - extract - INFO - Fetched 10 reviews from https://makeup.com.ua/ua/product/1304604/ via HTTP
+2026-01-18 21:13:46,437 - extract - INFO - Saved 0 reviews for product 223
+2026-01-18 21:13:46,437 - extract - INFO - Fetching reviews for product 224
+2026-01-18 21:13:47,975 - extract - INFO - Fetched 11 reviews from https://makeup.com.ua/ua/product/993875/ via HTTP
+2026-01-18 21:13:47,985 - extract - INFO - Saved 0 reviews for product 224
+2026-01-18 21:13:47,985 - extract - INFO - Fetching reviews for product 225
+2026-01-18 21:13:50,907 - extract - INFO - Fetched 9 reviews from https://makeup.com.ua/ua/product/843053/ via HTTP
+2026-01-18 21:13:50,918 - extract - INFO - Saved 0 reviews for product 225
+2026-01-18 21:13:50,918 - extract - INFO - Fetching reviews for product 226
+2026-01-18 21:13:52,092 - extract - INFO - Fetched 13 reviews from https://makeup.com.ua/ua/product/1046331/ via HTTP
+2026-01-18 21:13:52,102 - extract - INFO - Saved 0 reviews for product 226
+2026-01-18 21:13:52,102 - extract - INFO - Fetching reviews for product 227
+2026-01-18 21:13:54,651 - extract - INFO - Fetched 7 reviews from https://makeup.com.ua/ua/product/1046367/ via HTTP
+2026-01-18 21:13:54,671 - extract - INFO - Saved 0 reviews for product 227
+2026-01-18 21:13:54,671 - extract - INFO - Fetching reviews for product 228
+2026-01-18 21:14:01,142 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/1476960/ via HTTP
+2026-01-18 21:14:01,147 - extract - INFO - Saved 0 reviews for product 228
+2026-01-18 21:14:01,147 - extract - INFO - Fetching reviews for product 229
+2026-01-18 21:14:03,016 - extract - INFO - Fetched 8 reviews from https://makeup.com.ua/ua/product/795930/ via HTTP
+2026-01-18 21:14:03,021 - extract - INFO - Saved 0 reviews for product 229
+2026-01-18 21:14:03,021 - extract - INFO - Fetching reviews for product 230
+2026-01-18 21:14:04,972 - extract - INFO - Fetched 10 reviews from https://makeup.com.ua/ua/product/762051/ via HTTP
+2026-01-18 21:14:04,987 - extract - INFO - Saved 0 reviews for product 230
+2026-01-18 21:14:04,987 - extract - INFO - Fetching reviews for product 231
+2026-01-18 21:14:07,142 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1238524/ via HTTP
+2026-01-18 21:14:07,149 - extract - INFO - Saved 0 reviews for product 231
+2026-01-18 21:14:07,149 - extract - INFO - Fetching reviews for product 232
+2026-01-18 21:14:09,927 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/796161/ via HTTP
+2026-01-18 21:14:09,934 - extract - INFO - Saved 0 reviews for product 232
+2026-01-18 21:14:09,934 - extract - INFO - Fetching reviews for product 233
+2026-01-18 21:14:13,791 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1046344/ via HTTP
+2026-01-18 21:14:13,800 - extract - INFO - Saved 0 reviews for product 233
+2026-01-18 21:14:13,800 - extract - INFO - Fetching reviews for product 234
+2026-01-18 21:14:14,969 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/796159/ via HTTP
+2026-01-18 21:14:14,977 - extract - INFO - Saved 0 reviews for product 234
+2026-01-18 21:14:14,978 - extract - INFO - Fetching reviews for product 235
+2026-01-18 21:14:16,262 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/796154/ via HTTP
+2026-01-18 21:14:16,271 - extract - INFO - Saved 0 reviews for product 235
+2026-01-18 21:14:16,271 - extract - INFO - Fetching reviews for product 236
+2026-01-18 21:14:17,731 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1046316/ via HTTP
+2026-01-18 21:14:17,737 - extract - INFO - Saved 0 reviews for product 236
+2026-01-18 21:14:17,737 - extract - INFO - Fetching reviews for product 237
+2026-01-18 21:14:22,085 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1046320/ via HTTP
+2026-01-18 21:14:22,093 - extract - INFO - Saved 0 reviews for product 237
+2026-01-18 21:14:22,093 - extract - INFO - Fetching reviews for product 238
+2026-01-18 21:14:24,571 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/796157/ via HTTP
+2026-01-18 21:14:24,588 - extract - INFO - Saved 0 reviews for product 238
+2026-01-18 21:14:24,588 - extract - INFO - Fetching reviews for product 239
+2026-01-18 21:14:26,199 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/796160/ via HTTP
+2026-01-18 21:14:26,203 - extract - INFO - Saved 0 reviews for product 239
+2026-01-18 21:14:26,203 - extract - INFO - Fetching reviews for product 240
+2026-01-18 21:14:27,878 - extract - INFO - Fetched 29 reviews from https://makeup.com.ua/ua/product/1027636/ via HTTP
+2026-01-18 21:14:27,907 - extract - INFO - Saved 0 reviews for product 240
+2026-01-18 21:14:27,907 - extract - INFO - Fetching reviews for product 241
+2026-01-18 21:14:29,382 - extract - INFO - Fetched 21 reviews from https://makeup.com.ua/ua/product/1086252/ via HTTP
+2026-01-18 21:14:29,419 - extract - INFO - Saved 0 reviews for product 241
+2026-01-18 21:14:29,419 - extract - INFO - Fetching reviews for product 242
+2026-01-18 21:14:31,060 - extract - INFO - Fetched 9 reviews from https://makeup.com.ua/ua/product/1162418/ via HTTP
+2026-01-18 21:14:31,069 - extract - INFO - Saved 0 reviews for product 242
+2026-01-18 21:14:31,073 - extract - INFO - Fetching reviews for product 243
+2026-01-18 21:14:34,536 - extract - INFO - Fetched 16 reviews from https://makeup.com.ua/ua/product/794177/ via HTTP
+2026-01-18 21:14:34,558 - extract - INFO - Saved 0 reviews for product 243
+2026-01-18 21:14:34,558 - extract - INFO - Fetching reviews for product 244
+2026-01-18 21:14:38,888 - extract - INFO - Fetched 15 reviews from https://makeup.com.ua/ua/product/233933/ via HTTP
+2026-01-18 21:14:38,903 - extract - INFO - Saved 0 reviews for product 244
+2026-01-18 21:14:38,903 - extract - INFO - Fetching reviews for product 245
+2026-01-18 21:14:46,097 - extract - INFO - Fetched 19 reviews from https://makeup.com.ua/ua/product/233955/ via HTTP
+2026-01-18 21:14:46,112 - extract - INFO - Saved 0 reviews for product 245
+2026-01-18 21:14:46,112 - extract - INFO - Fetching reviews for product 246
+2026-01-18 21:14:47,425 - extract - INFO - Fetched 8 reviews from https://makeup.com.ua/ua/product/1158628/ via HTTP
+2026-01-18 21:14:47,435 - extract - INFO - Saved 0 reviews for product 246
+2026-01-18 21:14:47,435 - extract - INFO - Fetching reviews for product 247
+2026-01-18 21:14:52,343 - extract - INFO - Fetched 19 reviews from https://makeup.com.ua/ua/product/207415/ via HTTP
+2026-01-18 21:14:52,355 - extract - INFO - Saved 0 reviews for product 247
+2026-01-18 21:14:52,355 - extract - INFO - Fetching reviews for product 248
+2026-01-18 21:14:54,859 - extract - INFO - Fetched 22 reviews from https://makeup.com.ua/ua/product/233959/ via HTTP
+2026-01-18 21:14:54,880 - extract - INFO - Saved 0 reviews for product 248
+2026-01-18 21:14:54,883 - extract - INFO - Extraction completed: 26 products, 0 reviews
+2026-01-18 21:14:54,887 - __main__ - INFO - 
+Extraction Summary:
+2026-01-18 21:14:54,887 - __main__ - INFO -   ✓ makeup.com.ua: success
+2026-01-18 21:14:54,887 - __main__ - INFO - 
 ================================================================================
-2026-01-18 19:47:08,633 - __main__ - INFO - STAGE 2: TRANSFORMATION
-2026-01-18 19:47:08,633 - __main__ - INFO - ================================================================================
-2026-01-18 19:47:11,183 - transform - INFO - Connected to MySQL database
-2026-01-18 19:47:11,183 - transform - INFO - Transforming extract 3
-2026-01-18 19:47:11,194 - transform - INFO - Connected to MySQL database
-2026-01-18 19:47:11,194 - transform - INFO - Processing 9 products from extract 3
-2026-01-18 19:47:11,194 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
-2026-01-18 19:47:11,194 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
-2026-01-18 19:47:11,204 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:47:11,204 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
-2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
-2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Kidz
-2026-01-18 19:47:11,206 - transform - INFO - Product already exists: Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:47:12,168 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:47:12,900 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:47:12,900 - transform - INFO - Transformation completed for extract 3
-2026-01-18 19:47:12,900 - transform - INFO - Transforming extract 5
-2026-01-18 19:47:12,922 - transform - INFO - Connected to MySQL database
-2026-01-18 19:47:12,922 - transform - INFO - Processing 9 products from extract 5
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:47:12,922 - transform - INFO - Product already exists: Naturelle Kidz
-2026-01-18 19:47:12,932 - transform - INFO - Product already exists: Naturelle Classic Night
-2026-01-18 19:47:22,981 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:47:34,074 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:47:34,074 - transform - INFO - Transformation completed for extract 5
-2026-01-18 19:47:34,074 - transform - INFO - Transforming extract 13
-2026-01-18 19:47:34,085 - transform - INFO - Connected to MySQL database
-2026-01-18 19:47:34,085 - transform - INFO - Processing 26 products from extract 13
-2026-01-18 19:47:34,085 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 19:47:34,096 - transform - INFO - Product already exists: Вологі серветки для прибирання
-2026-01-18 19:47:34,101 - transform - INFO - Product already exists: Серветки вологі універсальні
-2026-01-18 19:47:34,111 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 19:47:34,117 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 19:47:34,117 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 19:47:34,128 - transform - INFO - Product already exists: Вологі серветки рожеві
-2026-01-18 19:47:34,128 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 19:47:34,133 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 19:47:34,139 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 19:47:34,149 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 19:47:34,153 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 19:47:34,153 - transform - INFO - Product already exists: Avon Imari Naturelle
-2026-01-18 19:47:34,153 - transform - INFO - Product already exists: Chloe Naturelle
-2026-01-18 19:47:34,165 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
-2026-01-18 19:47:34,170 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:47:34,170 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:47:34,176 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 19:47:34,181 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 19:47:34,181 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:47:37,536 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:47:55,050 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:47:55,163 - transform - INFO - Transformation completed for extract 13
-2026-01-18 19:47:55,163 - transform - INFO - Transforming extract 14
-2026-01-18 19:47:55,177 - transform - INFO - Connected to MySQL database
-2026-01-18 19:47:55,177 - transform - INFO - Processing 26 products from extract 14
-2026-01-18 19:47:55,177 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки для прибирання
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі універсальні
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки рожеві
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 19:47:55,184 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 19:47:55,193 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Avon Imari Naturelle
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Chloe Naturelle
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:47:55,195 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
-2026-01-18 19:47:55,206 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 19:47:55,206 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 19:47:55,206 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:47:55,564 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:49:07,009 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:49:07,010 - transform - INFO - Transformation completed for extract 14
-2026-01-18 19:49:07,010 - transform - INFO - Transforming extract 16
-2026-01-18 19:49:07,024 - transform - INFO - Connected to MySQL database
-2026-01-18 19:49:07,025 - transform - INFO - Processing 26 products from extract 16
-2026-01-18 19:49:07,026 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
-2026-01-18 19:49:07,028 - transform - INFO - Product already exists: Вологі серветки для прибирання
-2026-01-18 19:49:07,029 - transform - INFO - Product already exists: Серветки вологі універсальні
-2026-01-18 19:49:07,030 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
-2026-01-18 19:49:07,031 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
-2026-01-18 19:49:07,032 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
-2026-01-18 19:49:07,033 - transform - INFO - Product already exists: Вологі серветки рожеві
-2026-01-18 19:49:07,034 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
-2026-01-18 19:49:07,034 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
-2026-01-18 19:49:07,036 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
-2026-01-18 19:49:07,038 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
-2026-01-18 19:49:07,039 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
-2026-01-18 19:49:07,040 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
-2026-01-18 19:49:07,041 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
-2026-01-18 19:49:07,041 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
-2026-01-18 19:49:07,042 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
-2026-01-18 19:49:07,043 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
-2026-01-18 19:49:07,044 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
-2026-01-18 19:49:07,045 - transform - INFO - Product already exists: Avon Imari Naturelle
-2026-01-18 19:49:07,045 - transform - INFO - Product already exists: Chloe Naturelle
-2026-01-18 19:49:07,046 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
-2026-01-18 19:49:07,047 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:49:07,047 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
-2026-01-18 19:49:07,048 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
-2026-01-18 19:49:07,048 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
-2026-01-18 19:49:07,049 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
-2026-01-18 19:49:08,237 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:49:17,091 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:49:17,091 - transform - INFO - Transformation completed for extract 16
-2026-01-18 19:49:17,091 - transform - INFO - Transforming extract 24
-2026-01-18 19:49:17,096 - transform - INFO - Connected to MySQL database
-2026-01-18 19:49:17,096 - transform - INFO - Processing 25 products from extract 24
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:49:17,107 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:49:17,117 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
-2026-01-18 19:49:17,122 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:49:17,128 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:49:27,192 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:49:57,933 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:49:57,933 - transform - INFO - Transformation completed for extract 24
-2026-01-18 19:49:57,936 - transform - INFO - Transforming extract 26
-2026-01-18 19:49:57,940 - transform - INFO - Connected to MySQL database
-2026-01-18 19:49:57,940 - transform - INFO - Processing 25 products from extract 26
-2026-01-18 19:49:57,949 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:49:57,951 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:49:57,961 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
-2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:49:57,965 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:49:57,972 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:49:57,972 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:49:59,033 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:50:07,786 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:50:07,791 - transform - INFO - Transformation completed for extract 26
-2026-01-18 19:50:07,791 - transform - INFO - Transforming extract 27
-2026-01-18 19:50:07,801 - transform - INFO - Connected to MySQL database
-2026-01-18 19:50:07,807 - transform - INFO - Processing 25 products from extract 27
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:50:07,807 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:50:07,817 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:50:07,822 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:50:07,822 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:50:07,825 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:50:07,827 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
-2026-01-18 19:50:07,827 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:50:07,828 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:50:07,828 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:50:07,831 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:50:07,831 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:50:08,223 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:57:03,990 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:57:03,990 - transform - INFO - Transformation completed for extract 27
-2026-01-18 19:57:03,990 - transform - INFO - Transforming extract 28
-2026-01-18 19:57:04,006 - transform - INFO - Connected to MySQL database
-2026-01-18 19:57:04,011 - transform - INFO - Processing 25 products from extract 28
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
-2026-01-18 19:57:04,011 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
-2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
-2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
-2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
-2026-01-18 19:57:04,022 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
-2026-01-18 19:57:04,026 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
-2026-01-18 19:57:04,032 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
-2026-01-18 19:57:04,032 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
-2026-01-18 19:57:05,004 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
-2026-01-18 19:57:14,401 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
-2026-01-18 19:57:14,401 - transform - INFO - Transformation completed for extract 28
-2026-01-18 19:57:14,411 - __main__ - INFO - ✓ Transformation completed successfully
-2026-01-18 19:57:14,411 - __main__ - INFO - 
+2026-01-18 21:14:54,887 - __main__ - INFO - STAGE 2: TRANSFORMATION
+2026-01-18 21:14:54,887 - __main__ - INFO - ================================================================================
+2026-01-18 21:14:55,545 - transform - INFO - Connected to MySQL database
+2026-01-18 21:14:55,545 - transform - INFO - Transforming extract 3
+2026-01-18 21:14:55,559 - transform - INFO - Connected to MySQL database
+2026-01-18 21:14:55,560 - transform - INFO - Processing 9 products from extract 3
+2026-01-18 21:14:55,560 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
+2026-01-18 21:14:55,563 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
+2026-01-18 21:14:55,563 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:14:55,563 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
+2026-01-18 21:14:55,563 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
+2026-01-18 21:14:55,567 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:14:55,567 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:14:55,567 - transform - INFO - Product already exists: Naturelle Kidz
+2026-01-18 21:14:55,567 - transform - INFO - Product already exists: Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:14:57,408 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:15:05,731 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:15:05,731 - transform - INFO - Transformation completed for extract 3
+2026-01-18 21:15:05,731 - transform - INFO - Transforming extract 5
+2026-01-18 21:15:05,747 - transform - INFO - Connected to MySQL database
+2026-01-18 21:15:05,747 - transform - INFO - Processing 9 products from extract 5
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Angel Schlesser Femme Naturelle
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Universal Wet Wipes
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Pink Wet Wipes
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Kidz
+2026-01-18 21:15:05,747 - transform - INFO - Product already exists: Naturelle Classic Night
+2026-01-18 21:15:06,889 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:15:08,329 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:15:08,329 - transform - INFO - Transformation completed for extract 5
+2026-01-18 21:15:08,340 - transform - INFO - Transforming extract 13
+2026-01-18 21:15:08,340 - transform - INFO - Connected to MySQL database
+2026-01-18 21:15:08,340 - transform - INFO - Processing 26 products from extract 13
+2026-01-18 21:15:08,355 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 21:15:08,355 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 21:15:08,355 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 21:15:08,371 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 21:15:08,371 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 21:15:08,387 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 21:15:08,387 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 21:15:08,387 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 21:15:08,387 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 21:15:08,387 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 21:15:08,387 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 21:15:08,403 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 21:15:08,419 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 21:15:08,421 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 21:15:08,434 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 21:15:08,434 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:15:08,434 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 21:15:08,434 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 21:15:08,450 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 21:15:09,835 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:15:17,968 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:15:17,968 - transform - INFO - Transformation completed for extract 13
+2026-01-18 21:15:17,968 - transform - INFO - Transforming extract 14
+2026-01-18 21:15:17,972 - transform - INFO - Connected to MySQL database
+2026-01-18 21:15:17,972 - transform - INFO - Processing 26 products from extract 14
+2026-01-18 21:15:17,972 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 21:15:17,972 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 21:15:17,988 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 21:15:18,004 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 21:15:18,004 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
+2026-01-18 21:15:18,004 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 21:15:18,004 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 21:15:18,004 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 21:15:18,583 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:15:27,839 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:15:27,839 - transform - INFO - Transformation completed for extract 14
+2026-01-18 21:15:27,839 - transform - INFO - Transforming extract 16
+2026-01-18 21:15:27,855 - transform - INFO - Connected to MySQL database
+2026-01-18 21:15:27,855 - transform - INFO - Processing 26 products from extract 16
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт.
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки для прибирання
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Серветки вологі універсальні
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт.
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт.
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт.
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки рожеві
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера"
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Вологі серветки для очищення взуття
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт.
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт
+2026-01-18 21:15:27,855 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт.
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт.
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Avon Imari Naturelle
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Chloe Naturelle
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом
+2026-01-18 21:15:27,871 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense
+2026-01-18 21:15:38,060 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:15:46,959 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:15:46,959 - transform - INFO - Transformation completed for extract 16
+2026-01-18 21:15:46,959 - transform - INFO - Transforming extract 24
+2026-01-18 21:15:46,968 - transform - INFO - Connected to MySQL database
+2026-01-18 21:15:46,974 - transform - INFO - Processing 25 products from extract 24
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 21:15:46,974 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 21:15:46,990 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 21:15:47,779 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:15:55,868 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:15:55,882 - transform - INFO - Transformation completed for extract 24
+2026-01-18 21:15:55,882 - transform - INFO - Transforming extract 26
+2026-01-18 21:15:55,884 - transform - INFO - Connected to MySQL database
+2026-01-18 21:15:55,884 - transform - INFO - Processing 25 products from extract 26
+2026-01-18 21:15:55,884 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 21:15:55,884 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:15:55,900 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 21:15:55,902 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 21:15:55,915 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 21:15:55,915 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 21:15:55,915 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:15:55,915 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:15:55,915 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 21:15:55,915 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 21:15:56,934 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:16:05,357 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:16:05,357 - transform - INFO - Transformation completed for extract 26
+2026-01-18 21:16:05,357 - transform - INFO - Transforming extract 27
+2026-01-18 21:16:05,372 - transform - INFO - Connected to MySQL database
+2026-01-18 21:16:05,372 - transform - INFO - Processing 25 products from extract 27
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 21:16:05,372 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 21:16:05,388 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 21:16:06,063 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:16:14,344 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:16:14,344 - transform - INFO - Transformation completed for extract 27
+2026-01-18 21:16:14,344 - transform - INFO - Transforming extract 28
+2026-01-18 21:16:14,360 - transform - INFO - Connected to MySQL database
+2026-01-18 21:16:14,360 - transform - INFO - Processing 25 products from extract 28
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Серветки вологі універсальні Naturelle
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 21:16:14,360 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 21:16:14,376 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:14,383 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 21:16:14,392 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 21:16:17,304 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:16:26,853 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:16:26,853 - transform - INFO - Transformation completed for extract 28
+2026-01-18 21:16:26,853 - transform - INFO - Transforming extract 30
+2026-01-18 21:16:26,880 - transform - INFO - Connected to MySQL database
+2026-01-18 21:16:26,880 - transform - INFO - Processing 26 products from extract 30
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 21:16:26,885 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 21:16:26,900 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода
+2026-01-18 21:16:26,900 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 21:16:26,900 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:16:26,900 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:26,900 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 21:16:26,900 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 21:16:26,900 - transform - INFO - Created new product in CORE: Засіб для зняття макіяжу з екстрактом зеленого оливки Belle Jardin Essence Naturelle
+2026-01-18 21:16:26,900 - transform - INFO - Created new product in CORE: Засіб для зняття макіяжу з екстрактом зеленого оливки Belle Jardin Essence Naturelle
+2026-01-18 21:16:26,916 - transform - INFO - Created new product in CORE: Шампунь проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:26,916 - transform - INFO - Created new product in CORE: Шампунь проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:27,751 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:16:30,660 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:16:30,691 - transform - INFO - Transformation completed for extract 30
+2026-01-18 21:16:30,691 - transform - INFO - Transforming extract 31
+2026-01-18 21:16:30,707 - transform - INFO - Connected to MySQL database
+2026-01-18 21:16:30,707 - transform - INFO - Processing 26 products from extract 31
+2026-01-18 21:16:30,707 - transform - INFO - Product already exists: Вологі серветки універсальні "Classic", 120 шт. Naturelle Universal Wet Wipes
+2026-01-18 21:16:30,707 - transform - INFO - Product already exists: Вологі серветки для прибирання Naturelle Cleaning Wet Wipes For Home
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 120 шт. Naturelle Antibacterial D-Panthenol
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Вологі серветки «Супермалюк», 72 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні. D-пантенол", 120 шт. Naturelle Antibacterial D-Panthenol Wet Wipes
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Вологі серветки рожеві Naturelle Pink Wet Wipes
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера", 120 шт Naturelle Super Baby
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Вологі серветки "Ромашка і алое вера" Naturelle Super Baby
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Вологі серветки для очищення взуття Naturelle
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 100 шт Naturelle Kidz
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Серветки вологі "Антибактеріальні", 72 шт. Naturelle Antibacterial Wet Wipes Travel Pack
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 20 шт Naturelle Kidz
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 10 шт Naturelle Kidz
+2026-01-18 21:16:30,723 - transform - INFO - Product already exists: Вологі серветки «Ромашка та алое вера», 15 шт. Naturelle Super Baby Ultra Soft Wipes
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Вологі серветки «Ромашка й алое вера», 15 шт. Naturelle Super Baby Wipes
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Дитячі серветки вологі "Алое вера", 60 шт Naturelle Kidz
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Дитячі серветки вологі "Ромашка", 60 шт Naturelle Kidz
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Chloe Naturelle Парфумована вода
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Chloé Nomade Jasmin Naturel Парфумована вода 
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода (міні)
+2026-01-18 21:16:30,733 - transform - INFO - Product already exists: Гігієнічні прокладки, 14 шт Naturella Classic Night
+2026-01-18 21:16:30,739 - transform - INFO - Product already exists: Бальзам-маска проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:30,739 - transform - INFO - Product already exists: Шампунь для волосся з маслом макадамії і прополісом Натюрель boutique
+2026-01-18 21:16:30,739 - transform - INFO - Product already exists: Chloé Rose Naturelle Intense Парфумована вода
+2026-01-18 21:16:30,739 - transform - INFO - Product already exists: Засіб для зняття макіяжу з екстрактом зеленого оливки Belle Jardin Essence Naturelle
+2026-01-18 21:16:30,739 - transform - INFO - Product already exists: Шампунь проти випадіння волосся з маслом жожоба і екстрактом лопуха великого Натюрель boutique
+2026-01-18 21:16:35,389 - httpx - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 21:16:43,307 - transform - ERROR - Error analyzing sentiment: 'AIMessage' object is not subscriptable
+2026-01-18 21:16:43,307 - transform - INFO - Transformation completed for extract 31
+2026-01-18 21:16:43,307 - __main__ - INFO - ✓ Transformation completed successfully
+2026-01-18 21:16:43,307 - __main__ - INFO - 
 ================================================================================
-2026-01-18 19:57:14,411 - __main__ - INFO - RETL PIPELINE COMPLETED SUCCESSFULLY
-2026-01-18 19:57:14,411 - __main__ - INFO - Duration: 0:10:05.788363
-2026-01-18 19:57:14,411 - __main__ - INFO - End time: 2026-01-18 19:57:14
-2026-01-18 19:57:14,411 - __main__ - INFO - ================================================================================
+2026-01-18 21:16:43,307 - __main__ - INFO - RETL PIPELINE COMPLETED SUCCESSFULLY
+2026-01-18 21:16:43,307 - __main__ - INFO - Duration: 0:03:28.859298
+2026-01-18 21:16:43,307 - __main__ - INFO - End time: 2026-01-18 21:16:43
+2026-01-18 21:16:43,307 - __main__ - INFO - ================================================================================
 

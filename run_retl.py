@@ -15,7 +15,6 @@ sys.path.append(str(Path(__file__).parent / 'src'))
 
 from extract import Extractor
 from transform import Transformer
-from load import Loader
 
 # Налаштування логування
 log_dir = Path('logs')
@@ -27,7 +26,6 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        # logging.FileHandler(log_dir / f'retl_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'),
         logging.FileHandler(log_file, mode='w', encoding='utf-8'),
         logging.StreamHandler()
     ]
@@ -116,7 +114,7 @@ def run_load_stage():
     logger.info("\n" + "=" * 80)
     logger.info("STAGE 3: LOAD TO PRODUCTION")
     logger.info("=" * 80)
-    
+
     try:
         loader = Loader()
         loader.run_load()
@@ -137,19 +135,15 @@ def main():
         # Завантажити конфігурацію
         config = load_config()
         
-        # Categories/brands removed — no initialization required
-        # Original initialization call (kept commented):
-        # initialize_categories(config)
-        
         # Stage 1: Extract
-        # extraction_results = run_extraction_stage(config)
+        extraction_results = run_extraction_stage(config)
         
-        # # Перевірити чи були успішні extraction'и
-        # successful_extractions = [r for r in extraction_results if r['status'] == 'success']
+        # Перевірити чи були успішні extraction'и
+        successful_extractions = [r for r in extraction_results if r['status'] == 'success']
         
-        # if not successful_extractions:
-        #     logger.warning("No successful extractions. Pipeline stopped.")
-        #     return False
+        if not successful_extractions:
+            logger.warning("No successful extractions. Pipeline stopped.")
+            return False
         
         # Stage 2: Transform
         transform_success = run_transformation_stage()
@@ -157,13 +151,6 @@ def main():
         if not transform_success:
             logger.error("Transformation failed. Skipping load stage.")
             return False
-        
-        # Stage 3: Load
-        # load_success = run_load_stage()
-        
-        # if not load_success:
-        #     logger.error("Load failed.")
-        #     return False
         
         # Підсумок
         end_time = datetime.now()
