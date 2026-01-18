@@ -138,25 +138,18 @@ class Transformer:
     #         return None
     
     def find_similar_products(self, product_names):
-        """Шукає схожі продукти в Product_CORE для групи продуктів"""
+        """Шукає схожі продукти в Product_CORE для групи продуктів, зменшуючи кількість запитів до LLM"""
         cursor = self.conn.cursor(dictionary=True)
         cursor.execute('SELECT pc_id, pc_desc FROM Product_CORE')
         existing_products = cursor.fetchall()
 
-        results = {}
+        # Групування продуктів для перевірки схожості
+        product_groups = {}
         for product_name in product_names:
-            for existing in existing_products:
-                # Спочатку швидка перевірка з rapidfuzz
-                score = fuzz.token_sort_ratio(product_name, existing['pc_desc'])
-
-                if score >= self.similarity_threshold * 100:
-                    # Якщо схожість висока, додати до перевірки через LLM
-                    if product_name not in results:
-                        results[product_name] = []
-                    results[product_name].append(existing['pc_desc'])
+            product_groups[product_name] = [existing['pc_desc'] for existing in existing_products]
 
         # Виклик LLM для підтвердження схожості
-        confirmed_similarities = self.llm_confirm_similarities(results)
+        confirmed_similarities = self.llm_confirm_similarities(product_groups)
 
         # Повернути результати
         similar_products = {}
@@ -170,21 +163,21 @@ class Transformer:
         return similar_products
 
     def llm_confirm_similarities(self, product_groups):
-        """Uses LLM to confirm product similarities for a group of products"""
+        """Uses LLM to confirm product similarities for a group of products in a single request"""
         try:
-            prompts = []
+            # Формування єдиного запиту для LLM
+            prompt = "Чи є ці продукти однаковими або дуже схожими?\n\n"
             for product_name, candidates in product_groups.items():
                 for candidate in candidates:
-                    prompts.append(f"Продукт 1: {product_name}\nПродукт 2: {candidate}")
+                    prompt += f"Продукт 1: {product_name}\nПродукт 2: {candidate}\n\n"
 
-            # Об'єднати всі запити в один
-            prompt = f"""Чи є ці продукти однаковими або дуже схожими?\n\n" + "\n\n".join(prompts) + "\n\nВідповідь дай у форматі: Продукт 1: <назва>, Продукт 2: <назва>, Відповідь: так/ні."""
+            prompt += "Відповідь дай у форматі: Продукт 1: <назва>, Продукт 2: <назва>, Відповідь: так/ні."
 
             resp = self.llm(
                 messages=[{"role": "user", "content": prompt}]
             )
 
-            # Обробити відповідь
+            # Обробка відповіді
             logger.debug(f"LLM response: {resp}")
             response_content = resp['choices'][0]['message']['content']
             lines = response_content.strip().split("\n")
@@ -205,29 +198,43 @@ class Transformer:
             logger.error(f"Error calling LLM for similarities: {e}")
             return {}
 
-    def analyze_review_sentiment(self, review_text):
-        """Analyzes review sentiment via LLM"""
+    def analyze_review_sentiment(self, review_texts):
+        """Analyzes sentiment for multiple reviews via a single LLM request"""
         try:
-            prompt = f"""Проаналізуй сентимент цього відгуку:\n\n\"{review_text}\"\n\nВизнач:\n1. Сентимент: negative, neutral, або positive\n2. Важливість: high або low\n\nВідповідь дай у форматі: сентимент,важливість\nНаприклад: positive,high"""
+            # Формування єдиного запиту для аналізу кількох відгуків
+            prompt = "Проаналізуй сентимент цих відгуків:\n\n"
+            for i, review_text in enumerate(review_texts, 1):
+                prompt += f"Відгук {i}: \"{review_text}\"\n"
+
+            prompt += "\nВизнач для кожного відгуку:\n1. Сентимент: negative, neutral, або positive\n2. Важливість: high або low\n\nВідповідь дай у форматі: Відгук <номер>: сентимент,важливість"
 
             resp = self.llm(
                 messages=[{"role": "user", "content": prompt}]
             )
 
-            result = resp['choices'][0]['message']['content'].strip().lower()
-            parts = result.split(',')
+            # Обробка відповіді
+            logger.debug(f"LLM response: {resp}")
+            response_content = resp['choices'][0]['message']['content']
+            lines = response_content.strip().split("\n")
 
-            if len(parts) == 2:
-                sentiment = parts[0].strip()
-                importance = parts[1].strip()
+            sentiments = []
+            for line in lines:
+                parts = line.split(": ")[1].split(",")
+                if len(parts) == 2:
+                    sentiment = parts[0].strip()
+                    importance = parts[1].strip()
 
-                if sentiment in ['negative', 'neutral', 'positive'] and importance in ['high', 'low']:
-                    return sentiment, importance
+                    if sentiment in ['negative', 'neutral', 'positive'] and importance in ['high', 'low']:
+                        sentiments.append((sentiment, importance))
+                    else:
+                        sentiments.append(('neutral', 'low'))
+                else:
+                    sentiments.append(('neutral', 'low'))
 
-            return 'neutral', 'low'
+            return sentiments
         except Exception as e:
             logger.error(f"Error analyzing sentiment: {e}")
-            return 'neutral', 'low'
+            return [('neutral', 'low')] * len(review_texts)
     
     def transform_extract(self, extract_id):
         """Трансформує дані з RAW в CORE для конкретного extract_id"""
