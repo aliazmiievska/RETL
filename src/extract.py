@@ -170,7 +170,7 @@ class Extractor:
         return self.current_extract_id
     
     def fetch_products_from_parsera(self, source_url):
-        """Використовує Parserа для отримання списку продуктів"""
+        """Використовує Parsera для отримання списку продуктів"""
         try:
             elements = {
                 "product_name": "Product name",
@@ -220,27 +220,22 @@ class Extractor:
         return True
     
     def save_products(self, products, base_domain):
-        """Saves filtered products to the database."""
+        """Зберігає відфільтровані продукти в БД"""
         cursor = self.conn.cursor()
         saved_count = 0
-
+        
         for product in products:
             if product['product_reviews_count'] >= 1 and self.is_valid_product(product['product_name']):
-                try:
-                    cursor.execute('''
-                        INSERT INTO Product_RAW (extract_fk_pr, pr_name, pr_review_count, pr_first_seen, pr_url_full)
-                        VALUES (%s, %s, %s, %s, %s)
-                    ''', (
-                        self.current_extract_id,
-                        product['product_name'],
-                        product['product_reviews_count'],
-                        datetime.now(),
-                        product['product_url']
-                    ))
-                    saved_count += 1
-                except Exception as e:
-                    logger.error(f"Error saving product: {e}")
-
+                full_url = base_domain + product['product_url']
+                
+                cursor.execute('''
+                    INSERT INTO Product_RAW (extract_fk_pr, pr_name, pr_review_count, pr_first_seen, pr_url_full)
+                    VALUES (%s, %s, %s, %s, %s)
+                ''', (self.current_extract_id, product['product_name'], 
+                      product['product_reviews_count'], datetime.now(), full_url))
+                
+                saved_count += 1
+        
         self.conn.commit()
         logger.info(f"Saved {saved_count} valid products")
         return saved_count
@@ -302,7 +297,7 @@ class Extractor:
 
             # 2) Фолбек на Parsera (може запускати браузер)
             elements = {
-                "review_text": "ONLY review text",
+                "review_text": "Review text or comment",
                 "review_date": "Review date"
             }
             result = self.scraper.run(url=product_url, elements=elements)
