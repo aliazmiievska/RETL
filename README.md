@@ -1,10 +1,9 @@
-
-!!! добавити в секрет апі ключі перед комітом
-
-
 # RETL - Review ETL Pipeline for Sanvita Products
 
 Автоматизований ETL pipeline для збору та аналізу відгуків на продукцію Санвіта з різних інтернет-магазинів.
+
+<img width="1918" height="999" alt="image" src="https://github.com/user-attachments/assets/02b355ac-3905-4fcf-a193-c8bb2e6fb916" />
+<img width="1914" height="991" alt="image" src="https://github.com/user-attachments/assets/6cb3b29c-aabb-425d-8ee4-60ddc19ea69b" />
 
 🎯 Ключові особливості:
 ✅ LLM аналіз - Claude API для sentiment, важливості та категорій
