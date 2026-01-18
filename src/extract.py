@@ -8,13 +8,24 @@ import re
 from dateutil import parser as date_parser
 from dateutil.relativedelta import relativedelta
 from parsera import Parsera
+import requests
+from bs4 import BeautifulSoup
 import os
+from langchain_openai import ChatOpenAI
+
 
 
 # logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-os.environ["OPENAI_API_KEY"] = self.config.get('openai', {}).get('api_key')
+# Do not set OPENAI_API_KEY at module import time using `self` (not defined here).
+# If you need to set an env var for Parsera/OpenAI, set it in a local copy of
+# `config/api_keys.yaml` and/or set the environment variable before running.
+# Example (PowerShell):
+#   $env:OPENAI_API_KEY = 'your_key_here'
+
+
+
 
 class Extractor:
     def __init__(self, config_path='config/api_keys.yaml'):
@@ -22,11 +33,16 @@ class Extractor:
         self.conn = None
         self.current_extract_id = None
         
-        # Ініціалізація Parsera
-        self.scraper = Parsera()
-        
-        # Ключові слова для фільтрації продуктів Санвіта
-        self.brand_keywords = ['серветки', 'салфетки', 'napkin', 'санвіта', 'sanvita']
+        os.environ["OPENAI_API_KEY"] = self.config.get('openai', {}).get('api_key')
+
+        self.llm = ChatOpenAI(
+            model=self.config.get('openai_model', ' gpt-4o-mini'),
+            # gpt-4o # gpt-4o-mini # gpt-4.1 # gpt-4.1-mini # gpt-4.1-preview
+            temperature=0.0,
+            timeout=120,
+        )
+
+        self.scraper = Parsera(model=self.llm)
         self.noise_words = ['parfum', 'eau', 'ml', 'для жінок', 'для чоловіків', 'духи', 'туалетна вода']
         
     def _load_config(self, path):
@@ -59,24 +75,33 @@ class Extractor:
             )
         ''')
         
-        # Brands table
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS Brands (
-                brand_id INT AUTO_INCREMENT PRIMARY KEY,
-                brand_desc VARCHAR(255) UNIQUE NOT NULL
-            )
-        ''')
-        
-        # Extracts table
+        # Brands table (commented: brands were removed from schema)
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS Brands (
+        #         brand_id INT AUTO_INCREMENT PRIMARY KEY,
+        #         brand_desc VARCHAR(255) UNIQUE NOT NULL
+        #     )
+        # ''')
+        # Extracts table (no brand)
+        # Previously Extracts included extract_brand FK; kept as comment:
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS Extracts (
+        #         extract_id INT AUTO_INCREMENT PRIMARY KEY,
+        #         extract_fk_source INT NOT NULL,
+        #         extract_brand INT NOT NULL,
+        #         extract_datetime DATETIME NOT NULL,
+        #         extract_status ENUM('pending', 'success', 'failed') DEFAULT 'pending',
+        #         FOREIGN KEY (extract_fk_source) REFERENCES Sources(source_id),
+        #         FOREIGN KEY (extract_brand) REFERENCES Brands(brand_id)
+        #     )
+        # ''')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Extracts (
                 extract_id INT AUTO_INCREMENT PRIMARY KEY,
                 extract_fk_source INT NOT NULL,
-                extract_brand INT NOT NULL,
                 extract_datetime DATETIME NOT NULL,
                 extract_status ENUM('pending', 'success', 'failed') DEFAULT 'pending',
-                FOREIGN KEY (extract_fk_source) REFERENCES Sources(source_id),
-                FOREIGN KEY (extract_brand) REFERENCES Brands(brand_id)
+                FOREIGN KEY (extract_fk_source) REFERENCES Sources(source_id)
             )
         ''')
         
@@ -107,24 +132,26 @@ class Extractor:
         
         self.conn.commit()
     
-    def create_extract_entry(self, source_desc, brand_desc):
+    def create_extract_entry(self, source_desc):
         cursor = self.conn.cursor()
         
         # Отримати або створити source
         cursor.execute('INSERT IGNORE INTO Sources (source_desc) VALUES (%s)', (source_desc,))
         cursor.execute('SELECT source_id FROM Sources WHERE source_desc = %s', (source_desc,))
         source_id = cursor.fetchone()[0]
+
+        # cursor.execute('INSERT IGNORE INTO Brands (brand_desc) VALUES (%s)', (brand_desc,))
+        # cursor.execute('SELECT brand_id FROM Brands WHERE brand_desc = %s', (brand_desc,))
+        # brand_id = cursor.fetchone()[0]
+        # cursor.execute('''
+        #     INSERT INTO Extracts (extract_fk_source, extract_brand, extract_datetime, extract_status)
+        #     VALUES (%s, %s, %s, 'pending')
+        # ''', (source_id, brand_id, datetime.now()))
         
-        # Отримати або створити brand
-        cursor.execute('INSERT IGNORE INTO Brands (brand_desc) VALUES (%s)', (brand_desc,))
-        cursor.execute('SELECT brand_id FROM Brands WHERE brand_desc = %s', (brand_desc,))
-        brand_id = cursor.fetchone()[0]
-        
-        # Створити новий extract
         cursor.execute('''
-            INSERT INTO Extracts (extract_fk_source, extract_brand, extract_datetime, extract_status)
-            VALUES (%s, %s, %s, 'pending')
-        ''', (source_id, brand_id, datetime.now()))
+            INSERT INTO Extracts (extract_fk_source, extract_datetime, extract_status)
+            VALUES (%s, %s, 'pending')
+        ''', (source_id, datetime.now()))
         
         self.current_extract_id = cursor.lastrowid
         self.conn.commit()
@@ -175,18 +202,11 @@ class Extractor:
             return []
     
     def is_valid_product(self, product_name):
-        """Перевіряє, чи відповідає продукт критеріям бренду Санвіта"""
+        """Перевіряє, чи продукт не містить шумових слів"""
         product_lower = product_name.lower()
-        
-        # Перевірка наявності шумових слів
         if any(noise in product_lower for noise in self.noise_words):
             return False
-        
-        # Перевірка наявності ключових слів
-        if any(keyword in product_lower for keyword in self.brand_keywords):
-            return True
-        
-        return False
+        return True
     
     def save_products(self, products, base_domain):
         """Зберігає відфільтровані продукти в БД"""
@@ -252,16 +272,25 @@ class Extractor:
         return hashlib.md5(combined.encode('utf-8')).hexdigest()
     
     def fetch_reviews_from_parsera(self, product_url):
-        """Отримує відгуки для продукту через Parsera"""
+        """Отримує відгуки для продукту.
+
+        Спробувати парсинг через HTTP (BeautifulSoup) — якщо не вдасться,
+        повернутися до Parsera (може піднімати браузер).
+        """
         try:
+            # 1) HTTP парсинг першочергово
+            http_reviews = self._fetch_reviews_via_http(product_url)
+            if http_reviews:
+                logger.info(f"Fetched {len(http_reviews)} reviews from {product_url} via HTTP")
+                return http_reviews
+
+            # 2) Фолбек на Parsera (може запускати браузер)
             elements = {
                 "review_text": "Review text or comment",
                 "review_date": "Review date"
             }
-            
             result = self.scraper.run(url=product_url, elements=elements)
-            
-            # Конвертувати результат в список словників
+
             reviews = []
             if result and len(result) > 0:
                 for item in result:
@@ -269,12 +298,72 @@ class Extractor:
                         'review_text': item.get('review_text', ''),
                         'review_date': item.get('review_date', '')
                     })
-            
-            logger.info(f"Fetched {len(reviews)} reviews from {product_url}")
+
+            logger.info(f"Fetched {len(reviews)} reviews from {product_url} via Parsera")
             return reviews
-            
+
         except Exception as e:
             logger.error(f"Error fetching reviews: {e}")
+            return []
+
+    def _fetch_reviews_via_http(self, product_url):
+        """Спроба отримати відгуки звичайним HTTP парсингом.
+
+        Повертає список dict({'review_text', 'review_date'}) або пустий список.
+        """
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (compatible; retl-bot/1.0)'
+            }
+            resp = requests.get(product_url, headers=headers, timeout=15)
+            if resp.status_code != 200 or not resp.text:
+                return []
+
+            soup = BeautifulSoup(resp.text, 'html.parser')
+
+            # Пробуємо знайти елементи з різними селекторами, які часто містять відгуки
+            candidates = []
+            selectors = ["[itemprop='review']", ".review", ".comments", ".product-review", ".review-item", "div[class*=review]", "li[class*=review]", "div.comment"]
+            for sel in selectors:
+                found = soup.select(sel)
+                if found:
+                    candidates.extend(found)
+
+            # Якщо не знайдено — спробувати секцію поруч із заголовком "Відгуки"
+            if not candidates:
+                header = soup.find(lambda tag: tag.name in ('h2', 'h3', 'h4') and 'відгук' in tag.get_text(strip=True).lower())
+                if header:
+                    # збираємо наступні sibling-блоки до наступного заголовка
+                    for sib in header.find_next_siblings():
+                        if sib.name in ('h2', 'h3', 'h4'):
+                            break
+                        candidates.append(sib)
+
+            reviews = []
+            date_pattern = re.compile(r'\d{1,2}\s+\w+\s+\d{4}|\d{1,2}\.\d{1,2}\.\d{4}|\d{4}-\d{2}-\d{2}')
+
+            for node in candidates:
+                text = node.get_text(separator=' ', strip=True)
+                if not text:
+                    continue
+                # намагаємось витягти дату
+                date_match = date_pattern.search(text)
+                date_str = date_match.group() if date_match else ''
+                reviews.append({'review_text': text, 'review_date': date_str})
+
+            # Унікалізуємо за текстом
+            uniq = []
+            seen = set()
+            for r in reviews:
+                key = (r['review_text'][:200], r['review_date'])
+                if key in seen:
+                    continue
+                seen.add(key)
+                uniq.append(r)
+
+            return uniq
+        except Exception as e:
+            logger.debug(f"HTTP reviews parse failed for {product_url}: {e}")
             return []
     
     def save_reviews(self, product_id, reviews):
@@ -364,16 +453,21 @@ class Extractor:
             return None
 
     
-    def run_extraction(self, source_url, source_desc, brand_name, brand_desc, base_domain):
+    # Original signature included brand params; kept commented for reference:
+    # def run_extraction(self, source_url, source_desc, brand_name, brand_desc, base_domain):
+    def run_extraction(self, source_url, source_desc, base_domain):
         """Основний процес extraction"""
         try:
             self._connect_db()
             
             # Створити extract entry
-            self.create_extract_entry(source_desc, brand_desc)
+            # If you previously passed brand info, create_extract_entry accepted it
+            # self.create_extract_entry(source_desc, brand_desc)
+            self.create_extract_entry(source_desc)
             
             # Отримати продукти
-            logger.info(f"Fetching products for {brand_name} from {source_url}")
+            # Previously logged brand-specific fetch: logger.info(f"Fetching products for {brand_name} from {source_url}")
+            logger.info(f"Fetching products from {source_url}")
             products = self.fetch_products_from_parsera(source_url)
             
             if not products:
@@ -425,7 +519,5 @@ if __name__ == "__main__":
     extractor.run_extraction(
         source_url="https://makeup.com.ua/ua/search/?q=санвіта",
         source_desc="makeup.com.ua",
-        brand_name="санвіта",
-        brand_desc="Санвіта",
         base_domain="https://makeup.com.ua"
     )

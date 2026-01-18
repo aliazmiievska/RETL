@@ -111,7 +111,6 @@ export ANTHROPIC_API_KEY="your_anthropic_api_key"
 **Extracts** - історія всіх запусків
 - `extract_id` - унікальний ID запуску
 - `extract_fk_source` - джерело (makeup, epicentr, etc.)
-- `extract_brand` - бренд (Санвіта)
 - `extract_datetime` - час запуску
 - `extract_status` - статус: pending/success/failed
 
@@ -134,8 +133,7 @@ export ANTHROPIC_API_KEY="your_anthropic_api_key"
 **Product_CORE** - унікальні продукти
 - `pc_id` - ID продукту
 - `pc_desc` - опис
-- `pc_brand` - бренд
-- `pc_fk_category` - категорія (визначається LLM)
+ - (no brand/category fields; products are matched by description)
 
 **Review_CORE** - унікальні відгуки з аналізом
 - `rc_id` - ID відгуку
@@ -180,8 +178,6 @@ extractor = Extractor()
 extractor.run_extraction(
     source_url="https://makeup.com.ua/ua/search/?q=санвіта",
     source_desc="makeup.com.ua",
-    brand_name="санвіта",
-    brand_desc="Санвіта",
     base_domain="https://makeup.com.ua"
 )
 ```
@@ -252,14 +248,13 @@ tail -f logs/retl_20250113_080000.log
 SELECT 
     e.extract_id,
     s.source_desc,
-    b.brand_desc,
     e.extract_datetime,
     e.extract_status,
     COUNT(DISTINCT pr.pr_id) as products_count,
     COUNT(rr.rr_id) as reviews_count
 FROM Extracts e
 LEFT JOIN Sources s ON e.extract_fk_source = s.source_id
-LEFT JOIN Brands b ON e.extract_brand = b.brand_id
+-- Brands removed from schema
 LEFT JOIN Product_RAW pr ON pr.extract_fk_pr = e.extract_id
 LEFT JOIN Review_RAW rr ON rr.pr_fk_rr = pr.pr_id
 GROUP BY e.extract_id
@@ -267,19 +262,9 @@ ORDER BY e.extract_datetime DESC
 LIMIT 10;
 ```
 
-## 🔧 Налаштування категорій
+## 🔧 Категорії та бренди
 
-Додати нові категорії в `config.yaml`:
-
-```yaml
-categories:
-  - "Серветки косметичні"
-  - "Серветки сухі"
-  - "Серветки вологі"
-  - "Серветки універсальні"
-  - "Серветки для дітей"
-  - "Ваша нова категорія"
-```
+Категорії та бренди видалені з проєкту; пошук виконується виключно по URL, зазначеному вручну в конфігурації.
 
 ## 🌐 Додавання нових джерел
 

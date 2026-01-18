@@ -35,23 +35,30 @@ class Transformer:
     
     def _init_core_tables(self):
         cursor = self.conn.cursor()
-        
-        # Categories table
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS Categories (
-                category_id INT AUTO_INCREMENT PRIMARY KEY,
-                category_name VARCHAR(255) UNIQUE NOT NULL
-            )
-        ''')
-        
-        # Product_CORE table
+        # Product_CORE table (no categories/brands)
+        # Previously this code created a Categories table and a Product_CORE
+        # with brand/category fields. Kept here as commented reference.
+        #
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS Categories (
+        #         category_id INT AUTO_INCREMENT PRIMARY KEY,
+        #         category_name VARCHAR(255) UNIQUE NOT NULL
+        #     )
+        # ''')
+        #
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS Product_CORE (
+        #         pc_id INT AUTO_INCREMENT PRIMARY KEY,
+        #         pc_desc TEXT NOT NULL,
+        #         pc_brand VARCHAR(255) NOT NULL,
+        #         pc_fk_category INT,
+        #         FOREIGN KEY (pc_fk_category) REFERENCES Categories(category_id)
+        #     )
+        # ''')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Product_CORE (
                 pc_id INT AUTO_INCREMENT PRIMARY KEY,
-                pc_desc TEXT NOT NULL,
-                pc_brand VARCHAR(255) NOT NULL,
-                pc_fk_category INT,
-                FOREIGN KEY (pc_fk_category) REFERENCES Categories(category_id)
+                pc_desc TEXT NOT NULL
             )
         ''')
         
@@ -72,43 +79,47 @@ class Transformer:
         
         self.conn.commit()
     
-    def call_llm_for_category(self, product_name):
-        """Використовує LLM API для визначення категорії продукту"""
-        try:
-            # Отримати список категорій
-            cursor = self.conn.cursor()
-            cursor.execute('SELECT category_name FROM Categories')
-            categories = [row[0] for row in cursor.fetchall()]
-            
-            if not categories:
-                logger.warning("No categories found in database")
-                return None
-            
-            # Виклик OpenAI ChatCompletion
-            openai.api_key = self.config.get('openai', {}).get('api_key')
-
-            prompt = f"""Визнач категорію для товару: \"{product_name}\"\n\nДоступні категорії: {', '.join(categories)}\n\nВідповідь дай ТІЛЬКИ назву категорії, без жодних додаткових слів."""
-
-            resp = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=1000,
-                temperature=0
-            )
-
-            category = resp['choices'][0]['message']['content'].strip()
-            
-            # Перевірити чи категорія існує
-            if category in categories:
-                cursor.execute('SELECT category_id FROM Categories WHERE category_name = %s', (category,))
-                result = cursor.fetchone()
-                return result[0] if result else None
-            
-            return None
-            
-        except Exception as e:
-            logger.error(f"Error calling LLM for category: {e}")
-            return None
+    # Categories removed: category assignment is no longer part of transform
+    # The old LLM-based category assignment function is preserved here commented
+    # for reference (do not execute):
+    #
+    # def call_llm_for_category(self, product_name):
+    #     """Використовує LLM API для визначення категорії продукту"""
+    #     try:
+    #         # Отримати список категорій
+    #         cursor = self.conn.cursor()
+    #         cursor.execute('SELECT category_name FROM Categories')
+    #         categories = [row[0] for row in cursor.fetchall()]
+    #         
+    #         if not categories:
+    #             logger.warning("No categories found in database")
+    #             return None
+    #         
+    #         # Виклик OpenAI ChatCompletion
+    #         openai.api_key = self.config.get('openai', {}).get('api_key')
+#
+    #         prompt = f"""Визнач категорію для товару: \"{product_name}\"\n\nДоступні категорії: {', '.join(categories)}\n\nВідповідь дай ТІЛЬКИ назву категорії, без жодних додаткових слів."""
+#
+    #         resp = openai.ChatCompletion.create(
+    #             model="gpt-3.5-turbo",
+    #             messages=[{"role": "user", "content": prompt}],
+    #             max_tokens=1000,
+    #             temperature=0
+    #         )
+#
+    #         category = resp['choices'][0]['message']['content'].strip()
+    #         
+    #         # Перевірити чи категорія існує
+    #         if category in categories:
+    #             cursor.execute('SELECT category_id FROM Categories WHERE category_name = %s', (category,))
+    #             result = cursor.fetchone()
+    #             return result[0] if result else None
+    #         
+    #         return None
+    #         
+    #     except Exception as e:
+    #         logger.error(f"Error calling LLM for category: {e}")
+    #         return None
     
     def find_similar_product(self, product_name):
         """Шукає схожий продукт в Product_CORE"""
@@ -186,8 +197,15 @@ class Transformer:
             cursor = self.conn.cursor(dictionary=True)
             
             # Отримати всі продукти з RAW для цього extract
+            # Old query included extract_brand; kept commented for reference
+            # cursor.execute('''
+            #     SELECT pr.*, e.extract_brand, e.extract_fk_source
+            #     FROM Product_RAW pr
+            #     JOIN Extracts e ON pr.extract_fk_pr = e.extract_id
+            #     WHERE pr.extract_fk_pr = %s
+            # ''', (extract_id,))
             cursor.execute('''
-                SELECT pr.*, e.extract_brand, e.extract_fk_source
+                SELECT pr.*, e.extract_fk_source
                 FROM Product_RAW pr
                 JOIN Extracts e ON pr.extract_fk_pr = e.extract_id
                 WHERE pr.extract_fk_pr = %s
@@ -206,18 +224,20 @@ class Transformer:
                     pc_id = similar_pc_id
                 else:
                     # Створити новий продукт в CORE
-                    category_id = self.call_llm_for_category(raw_product['pr_name'])
-                    
-                    # Отримати brand_desc
-                    cursor.execute('SELECT brand_desc FROM Brands WHERE brand_id = %s', 
-                                 (raw_product['extract_brand'],))
-                    brand_result = cursor.fetchone()
-                    brand_desc = brand_result['brand_desc'] if brand_result else 'Unknown'
-                    
+                    # Previously we used brand and category info when inserting:
+                    # category_id = self.call_llm_for_category(raw_product['pr_name'])
+                    # cursor.execute('SELECT brand_desc FROM Brands WHERE brand_id = %s', 
+                    #              (raw_product['extract_brand'],))
+                    # brand_result = cursor.fetchone()
+                    # brand_desc = brand_result['brand_desc'] if brand_result else 'Unknown'
+                    # cursor.execute('''
+                    #     INSERT INTO Product_CORE (pc_desc, pc_brand, pc_fk_category)
+                    #     VALUES (%s, %s, %s)
+                    # ''', (raw_product['pr_name'], brand_desc, category_id))
                     cursor.execute('''
-                        INSERT INTO Product_CORE (pc_desc, pc_brand, pc_fk_category)
-                        VALUES (%s, %s, %s)
-                    ''', (raw_product['pr_name'], brand_desc, category_id))
+                        INSERT INTO Product_CORE (pc_desc)
+                        VALUES (%s)
+                    ''', (raw_product['pr_name'],))
                     
                     pc_id = cursor.lastrowid
                     self.conn.commit()

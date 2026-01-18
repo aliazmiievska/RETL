@@ -1,0 +1,100 @@
+2026-01-18 12:26:26,661 - __main__ - INFO - 
+================================================================================
+2026-01-18 12:26:26,661 - __main__ - INFO - RETL PIPELINE STARTED: 2026-01-18 12:26:26
+2026-01-18 12:26:26,661 - __main__ - INFO - ================================================================================
+
+2026-01-18 12:26:26,661 - __main__ - INFO - ================================================================================
+2026-01-18 12:26:26,661 - __main__ - INFO - STAGE 1: EXTRACTION
+2026-01-18 12:26:26,661 - __main__ - INFO - ================================================================================
+2026-01-18 12:26:27,748 - __main__ - INFO - 
+Extracting from makeup.com.ua
+2026-01-18 12:26:27,802 - extract - INFO - Connected to MySQL database
+2026-01-18 12:26:27,814 - extract - INFO - Created extract entry with ID: 13
+2026-01-18 12:26:27,814 - extract - INFO - Fetching products from https://makeup.com.ua/ua/search/?q=naturelle
+2026-01-18 12:27:12,305 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-18 12:27:12,571 - extract - INFO - Fetched 36 products from https://makeup.com.ua/ua/search/?q=naturelle
+2026-01-18 12:27:12,593 - extract - INFO - Saved 26 valid products
+2026-01-18 12:27:12,597 - extract - INFO - Fetching reviews for product 19
+2026-01-18 12:27:13,960 - extract - INFO - Fetched 10 reviews from https://makeup.com.ua/ua/product/1304604/ via HTTP
+2026-01-18 12:27:13,981 - extract - INFO - Saved 10 reviews for product 19
+2026-01-18 12:27:13,981 - extract - INFO - Fetching reviews for product 20
+2026-01-18 12:27:16,829 - extract - INFO - Fetched 11 reviews from https://makeup.com.ua/ua/product/993875/ via HTTP
+2026-01-18 12:27:16,838 - extract - INFO - Saved 9 reviews for product 20
+2026-01-18 12:27:16,838 - extract - INFO - Fetching reviews for product 21
+2026-01-18 12:27:18,334 - extract - INFO - Fetched 22 reviews from https://makeup.com.ua/ua/product/699587/ via HTTP
+2026-01-18 12:27:18,372 - extract - INFO - Saved 19 reviews for product 21
+2026-01-18 12:27:18,372 - extract - INFO - Fetching reviews for product 22
+2026-01-18 12:27:19,700 - extract - INFO - Fetched 9 reviews from https://makeup.com.ua/ua/product/843053/ via HTTP
+2026-01-18 12:27:19,709 - extract - INFO - Saved 8 reviews for product 22
+2026-01-18 12:27:19,709 - extract - INFO - Fetching reviews for product 23
+2026-01-18 12:27:21,198 - extract - INFO - Fetched 13 reviews from https://makeup.com.ua/ua/product/1046331/ via HTTP
+2026-01-18 12:27:21,209 - extract - INFO - Saved 11 reviews for product 23
+2026-01-18 12:27:21,209 - extract - INFO - Fetching reviews for product 24
+2026-01-18 12:27:22,731 - extract - INFO - Fetched 7 reviews from https://makeup.com.ua/ua/product/1046367/ via HTTP
+2026-01-18 12:27:22,739 - extract - INFO - Saved 6 reviews for product 24
+2026-01-18 12:27:22,739 - extract - INFO - Fetching reviews for product 25
+2026-01-18 12:27:24,390 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/1476960/ via HTTP
+2026-01-18 12:27:24,396 - extract - INFO - Saved 4 reviews for product 25
+2026-01-18 12:27:24,396 - extract - INFO - Fetching reviews for product 26
+2026-01-18 12:27:25,583 - extract - INFO - Fetched 8 reviews from https://makeup.com.ua/ua/product/795930/ via HTTP
+2026-01-18 12:27:25,592 - extract - INFO - Saved 6 reviews for product 26
+2026-01-18 12:27:25,592 - extract - INFO - Fetching reviews for product 27
+2026-01-18 12:27:27,420 - extract - INFO - Fetched 10 reviews from https://makeup.com.ua/ua/product/762051/ via HTTP
+2026-01-18 12:27:27,428 - extract - INFO - Saved 9 reviews for product 27
+2026-01-18 12:27:27,428 - extract - INFO - Fetching reviews for product 28
+2026-01-18 12:27:28,843 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1238524/ via HTTP
+2026-01-18 12:27:28,847 - extract - INFO - Saved 3 reviews for product 28
+2026-01-18 12:27:28,849 - extract - INFO - Fetching reviews for product 29
+2026-01-18 12:27:31,824 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/796161/ via HTTP
+2026-01-18 12:27:31,830 - extract - INFO - Saved 3 reviews for product 29
+2026-01-18 12:27:31,831 - extract - INFO - Fetching reviews for product 30
+2026-01-18 12:27:33,471 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1046344/ via HTTP
+2026-01-18 12:27:33,480 - extract - INFO - Saved 2 reviews for product 30
+2026-01-18 12:27:33,480 - extract - INFO - Fetching reviews for product 31
+2026-01-18 12:27:34,835 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/796159/ via HTTP
+2026-01-18 12:27:34,841 - extract - INFO - Saved 3 reviews for product 31
+2026-01-18 12:27:34,841 - extract - INFO - Fetching reviews for product 32
+2026-01-18 12:27:36,872 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/796154/ via HTTP
+2026-01-18 12:27:36,877 - extract - INFO - Saved 2 reviews for product 32
+2026-01-18 12:27:36,877 - extract - INFO - Fetching reviews for product 33
+2026-01-18 12:27:40,539 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1046316/ via HTTP
+2026-01-18 12:27:40,545 - extract - INFO - Saved 2 reviews for product 33
+2026-01-18 12:27:40,545 - extract - INFO - Fetching reviews for product 34
+2026-01-18 12:27:41,837 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/1046320/ via HTTP
+2026-01-18 12:27:41,843 - extract - INFO - Saved 2 reviews for product 34
+2026-01-18 12:27:41,843 - extract - INFO - Fetching reviews for product 35
+2026-01-18 12:27:43,176 - extract - INFO - Fetched 5 reviews from https://makeup.com.ua/ua/product/796157/ via HTTP
+2026-01-18 12:27:43,183 - extract - INFO - Saved 3 reviews for product 35
+2026-01-18 12:27:43,183 - extract - INFO - Fetching reviews for product 36
+2026-01-18 12:27:44,393 - extract - INFO - Fetched 4 reviews from https://makeup.com.ua/ua/product/796160/ via HTTP
+2026-01-18 12:27:44,398 - extract - INFO - Saved 2 reviews for product 36
+2026-01-18 12:27:44,398 - extract - INFO - Fetching reviews for product 37
+2026-01-18 12:27:45,786 - extract - INFO - Fetched 6 reviews from https://makeup.com.ua/ua/product/1358317/ via HTTP
+2026-01-18 12:27:45,788 - extract - INFO - Saved 3 reviews for product 37
+2026-01-18 12:27:45,788 - extract - INFO - Fetching reviews for product 38
+2026-01-18 12:27:46,688 - extract - INFO - Fetched 29 reviews from https://makeup.com.ua/ua/product/1027636/ via HTTP
+2026-01-18 12:27:46,727 - extract - INFO - Saved 26 reviews for product 38
+2026-01-18 12:27:46,727 - extract - INFO - Fetching reviews for product 39
+2026-01-18 12:27:48,099 - extract - INFO - Fetched 21 reviews from https://makeup.com.ua/ua/product/1086252/ via HTTP
+2026-01-18 12:27:48,141 - extract - INFO - Saved 16 reviews for product 39
+2026-01-18 12:27:48,142 - extract - INFO - Fetching reviews for product 40
+2026-01-18 12:27:50,462 - extract - INFO - Fetched 9 reviews from https://makeup.com.ua/ua/product/1162418/ via HTTP
+2026-01-18 12:27:50,477 - extract - INFO - Saved 6 reviews for product 40
+2026-01-18 12:27:50,478 - extract - INFO - Fetching reviews for product 41
+2026-01-18 12:27:51,852 - extract - INFO - Fetched 16 reviews from https://makeup.com.ua/ua/product/794177/ via HTTP
+2026-01-18 12:27:51,882 - extract - INFO - Saved 11 reviews for product 41
+2026-01-18 12:27:51,882 - extract - INFO - Fetching reviews for product 42
+2026-01-18 12:27:54,070 - extract - INFO - Fetched 15 reviews from https://makeup.com.ua/ua/product/233933/ via HTTP
+2026-01-18 12:27:54,097 - extract - INFO - Saved 13 reviews for product 42
+2026-01-18 12:27:54,098 - extract - INFO - Fetching reviews for product 43
+2026-01-18 12:27:56,332 - extract - INFO - Fetched 19 reviews from https://makeup.com.ua/ua/product/233955/ via HTTP
+2026-01-18 12:27:56,388 - extract - INFO - Saved 17 reviews for product 43
+2026-01-18 12:27:56,389 - extract - INFO - Fetching reviews for product 44
+2026-01-18 12:27:57,464 - extract - INFO - Fetched 8 reviews from https://makeup.com.ua/ua/product/1158628/ via HTTP
+2026-01-18 12:27:57,470 - extract - INFO - Saved 6 reviews for product 44
+2026-01-18 12:27:57,470 - extract - INFO - Extraction completed: 26 products, 202 reviews
+2026-01-18 12:27:57,470 - extract - ERROR - Unexpected error in get_extract_status: MySQL Connection not available.
+2026-01-18 12:27:57,470 - __main__ - INFO - 
+Extraction Summary:
+2026-01-18 12:27:57,470 - __main__ - INFO -   ✗ makeup.com.ua: failed
+2026-01-18 12:27:57,479 - __main__ - WARNING - No successful extractions. Pipeline stopped.

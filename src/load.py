@@ -48,15 +48,13 @@ class Loader:
     def _init_target_tables(self):
         """Створює таблиці на цільовому сервері"""
         cursor = self.target_conn.cursor()
-        
-        # Categories table
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS Categories (
-                category_id INT AUTO_INCREMENT PRIMARY KEY,
-                category_name VARCHAR(255) UNIQUE NOT NULL
-            )
-        ''')
-        
+        # Categories table (commented - categories removed from schema)
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS Categories (
+        #         category_id INT AUTO_INCREMENT PRIMARY KEY,
+        #         category_name VARCHAR(255) UNIQUE NOT NULL
+        #     )
+        # ''')
         # Sources table
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Sources (
@@ -65,14 +63,11 @@ class Loader:
             )
         ''')
         
-        # Product_CORE table
+        # Product_CORE table (no categories/brands)
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS Product_CORE (
                 pc_id INT AUTO_INCREMENT PRIMARY KEY,
-                pc_desc TEXT NOT NULL,
-                pc_brand VARCHAR(255) NOT NULL,
-                pc_fk_category INT,
-                FOREIGN KEY (pc_fk_category) REFERENCES Categories(category_id)
+                pc_desc TEXT NOT NULL
             )
         ''')
         
@@ -99,19 +94,18 @@ class Loader:
         """Завантажує категорії"""
         source_cursor = self.source_conn.cursor(dictionary=True)
         target_cursor = self.target_conn.cursor()
-        
-        source_cursor.execute('SELECT * FROM Categories')
-        categories = source_cursor.fetchall()
-        
-        for category in categories:
-            target_cursor.execute('''
-                INSERT INTO Categories (category_id, category_name)
-                VALUES (%s, %s)
-                ON DUPLICATE KEY UPDATE category_name = VALUES(category_name)
-            ''', (category['category_id'], category['category_name']))
-        
-        self.target_conn.commit()
-        logger.info(f"Loaded {len(categories)} categories")
+        # Categories have been removed from the pipeline
+        # Original implementation (kept commented):
+        # source_cursor.execute('SELECT * FROM Categories')
+        # categories = source_cursor.fetchall()
+        # for category in categories:
+        #     target_cursor.execute('''
+        #         INSERT INTO Categories (category_id, category_name)
+        #         VALUES (%s, %s)
+        #         ON DUPLICATE KEY UPDATE category_name = VALUES(category_name)
+        #     ''', (category['category_id'], category['category_name']))
+        # self.target_conn.commit()
+        logger.info("Skipping load_categories: categories removed from schema")
     
     def load_sources(self):
         """Завантажує джерела"""
@@ -141,14 +135,11 @@ class Loader:
         
         for product in products:
             target_cursor.execute('''
-                INSERT INTO Product_CORE (pc_id, pc_desc, pc_brand, pc_fk_category)
-                VALUES (%s, %s, %s, %s)
+                INSERT INTO Product_CORE (pc_id, pc_desc)
+                VALUES (%s, %s)
                 ON DUPLICATE KEY UPDATE 
-                    pc_desc = VALUES(pc_desc),
-                    pc_brand = VALUES(pc_brand),
-                    pc_fk_category = VALUES(pc_fk_category)
-            ''', (product['pc_id'], product['pc_desc'], 
-                  product['pc_brand'], product['pc_fk_category']))
+                    pc_desc = VALUES(pc_desc)
+            ''', (product['pc_id'], product['pc_desc']))
         
         self.target_conn.commit()
         logger.info(f"Loaded {len(products)} products")
@@ -190,7 +181,8 @@ class Loader:
             logger.info("Starting data load process...")
             
             # Завантажити довідники спочатку
-            self.load_categories()
+            # Previously the pipeline loaded categories first; kept as comment:
+            # self.load_categories()
             self.load_sources()
             
             # Потім основні дані
