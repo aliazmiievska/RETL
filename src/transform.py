@@ -79,19 +79,19 @@ class Transformer:
         ''')
         
         # Review_CORE table
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS Review_CORE (
-                rc_id INT AUTO_INCREMENT PRIMARY KEY,
-                pc_fk_rc INT NOT NULL,
-                rc_text TEXT NOT NULL,
-                rc_source INT NOT NULL,
-                rc_date DATE NOT NULL,
-                rc_sentiment ENUM('negative', 'neutral', 'positive'),
-                rc_importance ENUM('high', 'low'),
-                rc_hash VARCHAR(32) UNIQUE NOT NULL,
-                FOREIGN KEY (pc_fk_rc) REFERENCES Product_CORE(pc_id)
-            )
-        ''')
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS Review_CORE (
+        #         rc_id INT AUTO_INCREMENT PRIMARY KEY,
+        #         pc_fk_rc INT NOT NULL,
+        #         rc_text TEXT NOT NULL,
+        #         rc_source INT NOT NULL,
+        #         rc_date DATE NOT NULL,
+        #         rc_sentiment ENUM('negative', 'neutral', 'positive'),
+        #         rc_importance ENUM('high', 'low'),
+        #         rc_hash VARCHAR(32) UNIQUE NOT NULL,
+        #         FOREIGN KEY (pc_fk_rc) REFERENCES Product_CORE(pc_id)
+        #     )
+        # ''')
         
         self.conn.commit()
     
@@ -283,38 +283,38 @@ class Transformer:
                     logger.info(f"Created new product in CORE: {product_name}")
                 
                 # Обробити відгуки для цього продукту
-                cursor.execute('''
-                    SELECT * FROM Review_RAW WHERE pr_fk_rr = %s
-                ''', (raw_product['pr_id'],))
+                # cursor.execute('''
+                #     SELECT * FROM Review_RAW WHERE pr_fk_rr = %s
+                # ''', (raw_product['pr_id'],))
                 
-                raw_reviews = cursor.fetchall()
+                # raw_reviews = cursor.fetchall()
                 
-                for raw_review in raw_reviews:
-                    try:
-                        # Перевірити чи відгук вже існує (по hash)
-                        cursor.execute('SELECT rc_id FROM Review_CORE WHERE rc_hash = %s', 
-                                     (raw_review['rr_hash'],))
-                        
-                        if cursor.fetchone():
-                            logger.debug(f"Review already exists: {raw_review['rr_hash']}")
-                            continue
-                        
-                        # Аналіз сентименту та важливості
-                        sentiment, importance = self.analyze_review_sentiment(raw_review['rr_text'])
-                        
-                        # Додати відгук в CORE
-                        cursor.execute('''
-                            INSERT INTO Review_CORE 
-                            (pc_fk_rc, rc_text, rc_source, rc_date, rc_sentiment, rc_importance, rc_hash)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s)
-                        ''', (pc_id, raw_review['rr_text'], raw_product['extract_fk_source'],
-                              raw_review['rr_date'], sentiment, importance, raw_review['rr_hash']))
-                        
-                        logger.debug(f"Added review to CORE: {raw_review['rr_hash']}")
-                        
-                    except Exception as e:
-                        logger.error(f"Error processing review: {e}")
-                        continue
+                # for raw_review in raw_reviews:
+                #     try:
+                #         # Перевірити чи відгук вже існує (по hash)
+                #         cursor.execute('SELECT rc_id FROM Review_CORE WHERE rc_hash = %s', 
+                #                      (raw_review['rr_hash'],))
+                #         
+                #         if cursor.fetchone():
+                #             logger.debug(f"Review already exists: {raw_review['rr_hash']}")
+                #             continue
+                #         
+                #         # Аналіз сентименту та важливості
+                #         sentiment, importance = self.analyze_review_sentiment(raw_review['rr_text'])
+                #         
+                #         # Додати відгук в CORE
+                #         cursor.execute('''
+                #             INSERT INTO Review_CORE 
+                #             (pc_fk_rc, rc_text, rc_source, rc_date, rc_sentiment, rc_importance, rc_hash)
+                #             VALUES (%s, %s, %s, %s, %s, %s, %s)
+                #         ''', (pc_id, raw_review['rr_text'], raw_product['extract_fk_source'],
+                #               raw_review['rr_date'], sentiment, importance, raw_review['rr_hash']))
+                #         
+                #         logger.debug(f"Added review to CORE: {raw_review['rr_hash']}")
+                #         
+                #     except Exception as e:
+                #         logger.error(f"Error processing review: {e}")
+                #         continue
                 
                 self.conn.commit()
             
