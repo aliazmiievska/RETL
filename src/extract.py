@@ -466,62 +466,48 @@ class Extractor:
     
     # Original signature included brand params; kept commented for reference:
     # def run_extraction(self, source_url, source_desc, brand_name, brand_desc, base_domain):
+
     def run_extraction(self, source_url, source_desc, base_domain):
-        """Основний процес extraction"""
+        """Основний процес extraction. Повертає статус 'success' або 'failed'"""
+        status = 'failed'
         try:
             self._connect_db()
-            
-            # Створити extract entry
-            # If you previously passed brand info, create_extract_entry accepted it
-            # self.create_extract_entry(source_desc, brand_desc)
             self.create_extract_entry(source_desc)
-            
-            # Отримати продукти
-            # Previously logged brand-specific fetch: logger.info(f"Fetching products for {brand_name} from {source_url}")
             logger.info(f"Fetching products from {source_url}")
             products = self.fetch_products_from_parsera(source_url)
-            
             if not products:
                 logger.warning("No products found")
                 self.update_extract_status('failed')
-                return
-            
-            # Зберегти продукти
+                return 'failed'
             saved_products = self.save_products(products, base_domain)
-            
             if saved_products == 0:
                 logger.warning("No valid products to save")
                 self.update_extract_status('failed')
-                return
-            
-            # Отримати reviews для кожного продукту
+                return 'failed'
             cursor = self.conn.cursor(dictionary=True)
             cursor.execute('''
                 SELECT pr_id, pr_url_full FROM Product_RAW WHERE extract_fk_pr = %s
             ''', (self.current_extract_id,))
-            
             products_list = cursor.fetchall()
             total_reviews = 0
-            
             for product in products_list:
                 logger.info(f"Fetching reviews for product {product['pr_id']}")
                 reviews = self.fetch_reviews_from_parsera(product['pr_url_full'])
                 saved = self.save_reviews(product['pr_id'], reviews)
                 total_reviews += saved
                 logger.info(f"Saved {saved} reviews for product {product['pr_id']}")
-            
-            # Успішно завершено
             self.update_extract_status('success')
             logger.info(f"Extraction completed: {saved_products} products, {total_reviews} reviews")
-            
+            status = 'success'
         except Exception as e:
             logger.error(f"Extraction failed: {e}")
             self.cleanup()
             self.update_extract_status('failed')
-            raise
+            status = 'failed'
         finally:
             if self.conn:
                 self.conn.close()
+        return status
 
 if __name__ == "__main__":
     extractor = Extractor()

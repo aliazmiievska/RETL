@@ -74,53 +74,26 @@ def run_extraction_stage(config):
     
     extractor = Extractor()
     extraction_results = []
-    
     sources = config.get('sources', [])
-    # Original behavior iterated sources x brands; preserved commented below:
-    # brands = config.get('brands', [])
-    # for source in sources:
-    #     for brand in brands:
-    #         try:
-    #             logger.info(f"\nExtracting: {brand['name']} from {source['name']}")
-    #             extractor.run_extraction(
-    #                 source_url=source['url'],
-    #                 source_desc=source['name'],
-    #                 brand_name=brand['name'],
-    #                 brand_desc=brand['description'],
-    #                 base_domain=source['domain']
-    #             )
-    #             ...
-    # Current simplified run: per-source only
     for source in sources:
         try:
             logger.info(f"\nExtracting from {source['name']}")
-            extractor.run_extraction(
+            status = extractor.run_extraction(
                 source_url=source['url'],
                 source_desc=source['name'],
                 base_domain=source['domain']
             )
-
-            try:
-                status = extractor.get_extract_status()
-            except Exception as e:
-                logger.error(f"Could not read extract status from DB for {source['name']}: {e}")
-                status = None
-
             if status == 'success':
                 extraction_results.append({'source': source['name'], 'status': 'success'})
             else:
                 extraction_results.append({'source': source['name'], 'status': 'failed', 'error': f'extract_status={status}'})
-
         except Exception as e:
             logger.error(f"Extraction failed for {source['name']}: {e}")
             extraction_results.append({'source': source['name'], 'status': 'failed', 'error': str(e)})
-    
-    # Лог результатів
     logger.info("\nExtraction Summary:")
     for result in extraction_results:
         status = "✓" if result['status'] == 'success' else "✗"
         logger.info(f"  {status} {result['source']}: {result['status']}")
-    
     return extraction_results
 
 def run_transformation_stage():
