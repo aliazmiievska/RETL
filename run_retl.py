@@ -142,14 +142,14 @@ def main():
         # initialize_categories(config)
         
         # Stage 1: Extract
-        extraction_results = run_extraction_stage(config)
+        # extraction_results = run_extraction_stage(config)
         
-        # Перевірити чи були успішні extraction'и
-        successful_extractions = [r for r in extraction_results if r['status'] == 'success']
+        # # Перевірити чи були успішні extraction'и
+        # successful_extractions = [r for r in extraction_results if r['status'] == 'success']
         
-        if not successful_extractions:
-            logger.warning("No successful extractions. Pipeline stopped.")
-            return False
+        # if not successful_extractions:
+        #     logger.warning("No successful extractions. Pipeline stopped.")
+        #     return False
         
         # Stage 2: Transform
         transform_success = run_transformation_stage()
@@ -159,11 +159,11 @@ def main():
             return False
         
         # Stage 3: Load
-        load_success = run_load_stage()
+        # load_success = run_load_stage()
         
-        if not load_success:
-            logger.error("Load failed.")
-            return False
+        # if not load_success:
+        #     logger.error("Load failed.")
+        #     return False
         
         # Підсумок
         end_time = datetime.now()

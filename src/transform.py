@@ -4,6 +4,7 @@ from datetime import datetime
 import yaml
 from rapidfuzz import fuzz
 import openai
+from langchain_openai import ChatOpenAI
 
 # logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -13,7 +14,22 @@ class Transformer:
         self.config = self._load_config(config_path)
         self.conn = None
         self.similarity_threshold = 0.9
-        
+
+        # --- LLM via openrouter.ai (Xiaomi MiMo-V2-Flash) ---
+        openrouter_conf = self.config.get('openrouter', {})
+        api_key = openrouter_conf.get('api_key')
+        base_url = openrouter_conf.get('base_url', 'https://openrouter.ai/api/v1')
+        model = openrouter_conf.get('model', 'mistralai/MiMo-V2-Flash')
+
+        # LangChain OpenAI wrapper supports custom endpoint via openai_api_base
+        self.llm = ChatOpenAI(
+            model=model,
+            openai_api_key=api_key,
+            openai_api_base=base_url,
+            temperature=0.0,
+            timeout=120,
+        )
+
     def _load_config(self, path):
         with open(path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
@@ -121,71 +137,94 @@ class Transformer:
     #         logger.error(f"Error calling LLM for category: {e}")
     #         return None
     
-    def find_similar_product(self, product_name):
-        """Шукає схожий продукт в Product_CORE"""
+    def find_similar_products(self, product_names):
+        """Шукає схожі продукти в Product_CORE для групи продуктів"""
         cursor = self.conn.cursor(dictionary=True)
         cursor.execute('SELECT pc_id, pc_desc FROM Product_CORE')
         existing_products = cursor.fetchall()
-        
-        for existing in existing_products:
-            # Спочатку швидка перевірка з rapidfuzz
-            score = fuzz.token_sort_ratio(product_name, existing['pc_desc'])
-            
-            if score >= self.similarity_threshold * 100:
-                # Якщо схожість висока, перевірити через LLM
-                if self.llm_confirm_similarity(product_name, existing['pc_desc']):
-                    logger.info(f"Found similar product: {existing['pc_desc']} (score: {score})")
-                    return existing['pc_id']
-        
-        return None
-    
-    def llm_confirm_similarity(self, name1, name2):
-        """Використовує LLM для підтвердження схожості продуктів"""
+
+        results = {}
+        for product_name in product_names:
+            for existing in existing_products:
+                # Спочатку швидка перевірка з rapidfuzz
+                score = fuzz.token_sort_ratio(product_name, existing['pc_desc'])
+
+                if score >= self.similarity_threshold * 100:
+                    # Якщо схожість висока, додати до перевірки через LLM
+                    if product_name not in results:
+                        results[product_name] = []
+                    results[product_name].append(existing['pc_desc'])
+
+        # Виклик LLM для підтвердження схожості
+        confirmed_similarities = self.llm_confirm_similarities(results)
+
+        # Повернути результати
+        similar_products = {}
+        for product_name, similar_descs in confirmed_similarities.items():
+            for desc in similar_descs:
+                for existing in existing_products:
+                    if existing['pc_desc'] == desc:
+                        similar_products[product_name] = existing['pc_id']
+                        break
+
+        return similar_products
+
+    def llm_confirm_similarities(self, product_groups):
+        """Uses LLM to confirm product similarities for a group of products"""
         try:
-            openai.api_key = self.config.get('openai', {}).get('api_key')
+            prompts = []
+            for product_name, candidates in product_groups.items():
+                for candidate in candidates:
+                    prompts.append(f"Продукт 1: {product_name}\nПродукт 2: {candidate}")
 
-            prompt = f"""Чи є ці два продукти однаковими або дуже схожими?\n\nПродукт 1: {name1}\nПродукт 2: {name2}\n\nВідповідь дай ТІЛЬКИ \"так\" або \"ні\", без пояснень."""
+            # Об'єднати всі запити в один
+            prompt = f"""Чи є ці продукти однаковими або дуже схожими?\n\n" + "\n\n".join(prompts) + "\n\nВідповідь дай у форматі: Продукт 1: <назва>, Продукт 2: <назва>, Відповідь: так/ні."""
 
-            resp = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=50,
-                temperature=0
+            resp = self.llm(
+                messages=[{"role": "user", "content": prompt}]
             )
 
-            answer = resp['choices'][0]['message']['content'].strip().lower()
-            return answer == "так"
-            
-        except Exception as e:
-            logger.error(f"Error calling LLM for similarity: {e}")
-            return False
-    
-    def analyze_review_sentiment(self, review_text):
-        """Аналізує сентимент відгуку через LLM"""
-        try:
-            openai.api_key = self.config.get('openai', {}).get('api_key')
+            # Обробити відповідь
+            logger.debug(f"LLM response: {resp}")
+            response_content = resp['choices'][0]['message']['content']
+            lines = response_content.strip().split("\n")
 
+            confirmed_similarities = {}
+            for line in lines:
+                if "Відповідь: так" in line:
+                    parts = line.split(",")
+                    product_1 = parts[0].split(": ")[1].strip()
+                    product_2 = parts[1].split(": ")[1].strip()
+
+                    if product_1 not in confirmed_similarities:
+                        confirmed_similarities[product_1] = []
+                    confirmed_similarities[product_1].append(product_2)
+
+            return confirmed_similarities
+        except Exception as e:
+            logger.error(f"Error calling LLM for similarities: {e}")
+            return {}
+
+    def analyze_review_sentiment(self, review_text):
+        """Analyzes review sentiment via LLM"""
+        try:
             prompt = f"""Проаналізуй сентимент цього відгуку:\n\n\"{review_text}\"\n\nВизнач:\n1. Сентимент: negative, neutral, або positive\n2. Важливість: high або low\n\nВідповідь дай у форматі: сентимент,важливість\nНаприклад: positive,high"""
 
-            resp = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=1000,
-                temperature=0
+            resp = self.llm(
+                messages=[{"role": "user", "content": prompt}]
             )
 
             result = resp['choices'][0]['message']['content'].strip().lower()
             parts = result.split(',')
-            
+
             if len(parts) == 2:
                 sentiment = parts[0].strip()
                 importance = parts[1].strip()
-                
+
                 if sentiment in ['negative', 'neutral', 'positive'] and importance in ['high', 'low']:
                     return sentiment, importance
-            
+
             return 'neutral', 'low'
-            
         except Exception as e:
             logger.error(f"Error analyzing sentiment: {e}")
             return 'neutral', 'low'
@@ -214,34 +253,27 @@ class Transformer:
             raw_products = cursor.fetchall()
             logger.info(f"Processing {len(raw_products)} products from extract {extract_id}")
             
+            product_names = [raw_product['pr_name'] for raw_product in raw_products]
+            similar_products = self.find_similar_products(product_names)
+
             for raw_product in raw_products:
-                # Перевірити чи є схожий продукт в CORE
-                similar_pc_id = self.find_similar_product(raw_product['pr_name'])
-                
+                product_name = raw_product['pr_name']
+                similar_pc_id = similar_products.get(product_name)
+
                 if similar_pc_id:
                     # Продукт вже існує
-                    logger.info(f"Product already exists: {raw_product['pr_name']}")
+                    logger.info(f"Product already exists: {product_name}")
                     pc_id = similar_pc_id
                 else:
                     # Створити новий продукт в CORE
-                    # Previously we used brand and category info when inserting:
-                    # category_id = self.call_llm_for_category(raw_product['pr_name'])
-                    # cursor.execute('SELECT brand_desc FROM Brands WHERE brand_id = %s', 
-                    #              (raw_product['extract_brand'],))
-                    # brand_result = cursor.fetchone()
-                    # brand_desc = brand_result['brand_desc'] if brand_result else 'Unknown'
-                    # cursor.execute('''
-                    #     INSERT INTO Product_CORE (pc_desc, pc_brand, pc_fk_category)
-                    #     VALUES (%s, %s, %s)
-                    # ''', (raw_product['pr_name'], brand_desc, category_id))
                     cursor.execute('''
                         INSERT INTO Product_CORE (pc_desc)
                         VALUES (%s)
-                    ''', (raw_product['pr_name'],))
+                    ''', (product_name,))
                     
                     pc_id = cursor.lastrowid
                     self.conn.commit()
-                    logger.info(f"Created new product in CORE: {raw_product['pr_name']}")
+                    logger.info(f"Created new product in CORE: {product_name}")
                 
                 # Обробити відгуки для цього продукту
                 cursor.execute('''
