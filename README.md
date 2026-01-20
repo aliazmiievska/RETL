@@ -84,7 +84,7 @@ CREATE DATABASE retl_database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 ### 5. Налаштувати конфігурацію
 
-Відредагувати `config/api_keys.yaml`:
+Створити папку config з файлом api_keys.yaml `config/api_keys.yaml`:
 
 ```yaml
 mysql:
