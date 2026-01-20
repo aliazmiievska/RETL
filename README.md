@@ -151,7 +151,7 @@ sources:
 ```bash
 venv\Scripts\activate 
 python run_retl.py
-
+```
 
 ## 🎯 Як працює pipeline
 
