@@ -1,5 +1,5 @@
 
-# RETL - Review ETL Pipeline for Sanvita Products
+# RETL - Review ETL Pipeline for Sunvita Products
 
 ETL pipeline для збору та аналізу відгуків на продукцію Санвіта з різних інтернет-магазинів (на прикладі makeup.ua, бренд naturelle).
 
