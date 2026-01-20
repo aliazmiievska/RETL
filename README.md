@@ -205,7 +205,7 @@ tail -f logs/retl.log
 
 ## 📈 Power BI Integration
 
-Після успішного load підключіть Power BI до production MySQL:
+Після успішного transform підключіть Power BI до production MySQL:
 
 1. Get Data → MySQL database
 2. Server: `localhost`
