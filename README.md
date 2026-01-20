@@ -1,19 +1,34 @@
+
 # RETL - Review ETL Pipeline for Sanvita Products
 
-Автоматизований ETL pipeline для збору та аналізу відгуків на продукцію Санвіта з різних інтернет-магазинів.
+ETL pipeline для збору та аналізу відгуків на продукцію Санвіта з різних інтернет-магазинів (на прикладі makeup.ua, бренд naturelle).
+
+Що вже працює:
+✅ LLM аналіз - Xiaomi Mimo model через Openrouter API для sentiment та скрапінгу
+✅ Дедуплікація - MD5 hash для відгуків та продуктів
+✅ Нормалізація дат - українські дати ("06 серпня 2022") → YYYY-MM-DD
+✅ Cleanup - автоматичне видалення при помилках
+✅ Логування - детальні логи у файл retl.log (перезаписується)
+✅ Power BI ready -  підключення product_core, review_core через MySQL сервер
+
+Які є проблеми, недопрацювання:
+1. Некоректний збір відгуків через HTTP запити (зайві символи, інша кількість). 
+Вирішення - робити збір через playwright із підняттям браузера
+2. Проблема з визначенням sentiment (всюди default "neutral")
+Вирішення - визначення сентіментів неможливе через некоректний збір відгуків. Після вирішення попередньої проблеми має запрацювати
+3. В product_core необхідно добавити поле pc_review_count
+Вирішення - review_count вже успішно скрапиться, потрібно лиш добавляти в sql
+4. В review_raw i review_core потрібно добавити поле sources (домен є-комерсу)
+
+Заплановані покращення:
+1. Через те, що лог файл тільки один, окрема папка для нього не потрібна
+2. В api_keys зберігаються всі конфігураційні файли, що не збігається з назвою, необхідно створити додаткові файли і перевірити їх підключення
+3. Протестувати додавання нових джерел
+
+## Скріншоти проекту
 
 <img width="1918" height="999" alt="image" src="https://github.com/user-attachments/assets/02b355ac-3905-4fcf-a193-c8bb2e6fb916" />
 <img width="1914" height="991" alt="image" src="https://github.com/user-attachments/assets/6cb3b29c-aabb-425d-8ee4-60ddc19ea69b" />
-
-🎯 Ключові особливості:
-✅ LLM аналіз - Claude API для sentiment, важливості та категорій
-✅ Дедуплікація - MD5 hash для відгуків, rapidfuzz + LLM для продуктів
-✅ Нормалізація дат - українські дати ("06 серпня 2022") → YYYY-MM-DD
-✅ Cleanup - автоматичне видалення при помилках
-✅ Логування - детальні логи у файли
-✅ Cron ready - готовий до запуску щосуботи о 8:00
-✅ Power BI ready - production MySQL для підключення
-
 
 ## 📁 Структура проекту
 
@@ -22,13 +37,14 @@ retl/
 ├── src/
 │   ├── extract.py      # RAW extraction stage
 │   ├── transform.py    # CORE transformation stage
-│   └── load.py         # Production load stage
-├── data/               # Автоматично створюється
-├── logs/               # Автоматично створюється
-├── config.yaml         # Configuration file
-├── requirements.txt
+├── powerbi/            # PowerBI репорт
+├── logs/               
+│   └── retl.log        # Файл логування
+├── config/             
+│   └── api_keys.yaml   # Містить конфігураційні файли
+├── requirements.txt    # Бібліотеки, які потрібно завантажити
 ├── run_retl.py         # Main pipeline runner
-└── README.md
+└── README.md           # Цей файл
 ```
 
 ## 🚀 Встановлення
@@ -39,6 +55,7 @@ retl/
 git clone <your-repo>
 cd retl
 ```
+або через github desktop -> vs code
 
 ### 2. Створити віртуальне середовище
 
@@ -59,48 +76,34 @@ python -m playwright install
 
 ### 4. Налаштувати MySQL
 
-Створити базу даних:
+Створити базу даних в локальному MySQL сервері (таблиці створюються автоматично):
 
 ```mysql
 CREATE DATABASE retl_database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE DATABASE retl_production CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-+ таблиця категорії
-+ таблиця бренди
-хоча вони є в конфізі..
 ```
 
 ### 5. Налаштувати конфігурацію
 
-Відредагувати `config.yaml`:
+Відредагувати `config/api_keys.yaml`:
 
 ```yaml
 mysql:
-  host: "localhost"
-  user: "your_username"
-  password: "your_password"
+  host: "localhost" # або інший хост
+  user: "root" # або інша назва юзера
+  password: "ваш пароль до бд"
   database: "retl_database"
+  charset: "utf8mb4"
 
-mysql_target:
-  host: "your_production_server"
-  user: "your_username"
-  password: "your_password"
-  database: "retl_production"
+openrouter:
+          api_key: "ваш ключ"
+          # отримати можна за посиланням: https://openrouter.ai/settings/keys 
+          base_url: "https://openrouter.ai/api/v1"
+          model: "xiaomi/mimo-v2-flash:free"
 
-anthropic:
-  api_key: "your_anthropic_api_key"
-```
-
-**Отримати Anthropic API key:** https://console.anthropic.com/
-
-### 6. Налаштувати Parsera
-
-Parsera використовує безкоштовний LLM API для парсингу.
-
-Для роботи з Claude (рекомендовано) встановіть змінну середовища:
-
-```bash
-export ANTHROPIC_API_KEY="your_anthropic_api_key"
+sources:
+  - name: "makeup.com.ua"
+    url: "https://makeup.com.ua/ua/search/?q=naturelle#o[2243][]=1403025"
+    domain: "https://makeup.com.ua"
 ```
 
 ## 📊 Структура бази даних
@@ -111,13 +114,12 @@ export ANTHROPIC_API_KEY="your_anthropic_api_key"
 - `extract_id` - унікальний ID запуску
 - `extract_fk_source` - джерело (makeup, epicentr, etc.)
 - `extract_datetime` - час запуску
-- `extract_status` - статус: pending/success/failed
+- `extract_status` - статус: success/failed
 
 **Product_RAW** - сирі дані про продукти
 - `pr_id` - ID продукту
 - `extract_fk_pr` - зв'язок з extract
 - `pr_name` - назва продукту
-- `pr_review_count` - кількість відгуків
 - `pr_url_full` - повний URL
 
 **Review_RAW** - сирі відгуки
@@ -132,7 +134,6 @@ export ANTHROPIC_API_KEY="your_anthropic_api_key"
 **Product_CORE** - унікальні продукти
 - `pc_id` - ID продукту
 - `pc_desc` - опис
- - (no brand/category fields; products are matched by description)
 
 **Review_CORE** - унікальні відгуки з аналізом
 - `rc_id` - ID відгуку
@@ -141,149 +142,56 @@ export ANTHROPIC_API_KEY="your_anthropic_api_key"
 - `rc_source` - джерело
 - `rc_date` - дата
 - `rc_sentiment` - negative/neutral/positive (аналіз LLM)
-- `rc_importance` - high/low (аналіз LLM)
 - `rc_hash` - хеш для дедуплікації
 
 ## 🔄 Використання
 
-### Ручний запуск
+### Запуск
 
 ```bash
+venv\Scripts\activate 
 python run_retl.py
-```
 
-### Автоматичний запуск (cron)
-
-Додати в crontab (щосуботи о 8:00):
-
-```bash
-crontab -e
-```
-
-Додати рядок:
-
-```
-0 8 * * 6 cd /path/to/retl && /path/to/venv/bin/python run_retl.py >> logs/cron.log 2>&1
-```
-
-### Запуск окремих стадій
-
-**Тільки extraction:**
-
-```python
-from src.extract import Extractor
-
-extractor = Extractor()
-extractor.run_extraction(
-    source_url="https://makeup.com.ua/ua/search/?q=санвіта",
-    source_desc="makeup.com.ua",
-    base_domain="https://makeup.com.ua"
-)
-```
-
-**Тільки transformation:**
-
-```python
-from src.transform import Transformer
-
-transformer = Transformer()
-transformer.transform_all_successful_extracts()
-```
-
-**Тільки load:**
-
-```python
-from src.load import Loader
-
-loader = Loader()
-loader.run_load()
-```
 
 ## 🎯 Як працює pipeline
 
 ### Stage 1: Extract (RAW)
 
-1. Створює новий запис в `Extracts` (status: pending)
+1. Створює новий запис в `Extracts`
 2. Parsera скрапить сторінку пошуку → отримує список продуктів
-3. Фільтрація по ключових словах (серветки, санвіта) + виключення шуму (parfum, eau)
-4. Зберігає валідні продукти в `Product_RAW`
-5. Для кожного продукту скрапить сторінку → отримує відгуки
-6. Нормалізує дати ("06 серпня 2022" → "2022-08-06")
-7. Створює MD5 хеш для кожного відгуку (text + date)
-8. Зберігає в `Review_RAW`
-9. При успіху: status → success, при помилці: cleanup + status → failed
+3. Зберігає валідні продукти в `Product_RAW`
+4. Для кожного продукту скрапить сторінку → отримує відгуки
+5. Нормалізує дати ("06 серпня 2022" → "2022-08-06")
+6. Створює MD5 хеш для кожного відгуку (text + date)
+7. Зберігає в `Review_RAW`
+8. При успіху: status → success, при помилці: cleanup + status → failed
 
 ### Stage 2: Transform (CORE)
 
 1. Отримує всі продукти з успішних extracts
 2. Для кожного продукту:
-   - Перевіряє схожість з існуючими (rapidfuzz + LLM)
-   - Якщо новий → LLM визначає категорію → створює в `Product_CORE`
+   - Перевіряє схожість з існуючими по хешу
+   - Якщо новий → створює в `Product_CORE`
    - Якщо існує → використовує існуючий `pc_id`
 3. Для кожного відгуку:
    - Перевіряє по hash (дедуплікація)
    - LLM аналізує sentiment (negative/neutral/positive)
-   - LLM визначає importance (high/low)
    - Зберігає в `Review_CORE`
-
-### Stage 3: Load (Production)
-
-1. Підключається до production MySQL
-2. Завантажує Categories, Sources
-3. Завантажує Product_CORE (UPSERT)
-4. Завантажує Review_CORE (INSERT IGNORE по hash)
 
 ## 🛠 Моніторинг
 
-Логи зберігаються в `logs/`:
+Логи зберігаються в `logs/retl.log`:
 
 ```bash
-tail -f logs/retl_20250113_080000.log
-```
-
-Перевірка статусу останніх extracts:
-
-```sql
-SELECT 
-    e.extract_id,
-    s.source_desc,
-    e.extract_datetime,
-    e.extract_status,
-    COUNT(DISTINCT pr.pr_id) as products_count,
-    COUNT(rr.rr_id) as reviews_count
-FROM Extracts e
-LEFT JOIN Sources s ON e.extract_fk_source = s.source_id
--- Brands removed from schema
-LEFT JOIN Product_RAW pr ON pr.extract_fk_pr = e.extract_id
-LEFT JOIN Review_RAW rr ON rr.pr_fk_rr = pr.pr_id
-GROUP BY e.extract_id
-ORDER BY e.extract_datetime DESC
-LIMIT 10;
-```
-
-## 🔧 Категорії та бренди
-
-Категорії та бренди видалені з проєкту; пошук виконується виключно по URL, зазначеному вручну в конфігурації.
-
-## 🌐 Додавання нових джерел
-
-Додати в `config.yaml`:
-
-```yaml
-sources:
-  - name: "rozetka.com.ua"
-    url: "https://rozetka.com.ua/ua/search/?text=naturelle"
-    domain: "https://rozetka.com.ua"
+tail -f logs/retl.log
 ```
 
 ## ⚠️ Troubleshooting
 
 **Помилка: "No products found"**
 - Перевірте URL джерела
-- Перевірте чи працює Parsera
-- Можливо сайт змінив структуру
 
-**Помилка: "Anthropic API error"**
+**Помилка: "API error"**
 - Перевірте API key
 - Перевірте ліміти на акаунті
 
@@ -300,24 +208,33 @@ sources:
 Після успішного load підключіть Power BI до production MySQL:
 
 1. Get Data → MySQL database
-2. Server: `your_production_server`
-3. Database: `retl_production`
-4. Import tables: `Product_CORE`, `Review_CORE`, `Categories`, `Sources`
+2. Server: `localhost`
+3. Database: `retl_database`
+4. Import tables: `Product_CORE`, `Review_CORE`
 
 Рекомендовані міри:
 
 ```dax
 Total Reviews = COUNT(Review_CORE[rc_id])
+
 Positive Reviews % = 
     DIVIDE(
         CALCULATE(COUNT(Review_CORE[rc_id]), Review_CORE[rc_sentiment] = "positive"),
         COUNT(Review_CORE[rc_id])
     )
+
+Negative Reviews % = 
+    DIVIDE(
+        CALCULATE(COUNT(Review_CORE[rc_id]), Review_CORE[rc_sentiment] = "negative"),
+        COUNT(Review_CORE[rc_id])
+    )
+
+Neutral Reviews % = 
+    DIVIDE(
+        CALCULATE(COUNT(Review_CORE[rc_id]), Review_CORE[rc_sentiment] = "neutral"),
+        COUNT(Review_CORE[rc_id])
+    )
 ```
-
-## 📝 License
-
-no
 
 ## 👤 Author
 
